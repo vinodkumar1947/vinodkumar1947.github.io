@@ -113,3 +113,38 @@ footer a {
 footer a:hover {
   color: #ddd; /* Optional: Lightens the link color on hover */
 }
+
+/* Contact Section Styling */
+#contact {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+#contact h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.contact-icons a {
+  font-size: 2rem;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-icons a:hover {
+  color: #ff9800; /* Icon hover color */
+}
+
+#contact p {
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #555;
+}
