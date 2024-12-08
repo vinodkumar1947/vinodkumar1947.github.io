@@ -1,51 +1,25 @@
-/* General Reset */
-body, h1, h2, h3, p, ul, nav, a {
+/* Reset */
+body, h1, h2, h3, ul, p, nav, a {
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
   }
   
-  /* Font */
+  /* General Styling */
   body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: #333;
     background: #f9f9f9;
-  }
-  
-  /* Navbar */
-  nav {
-    background: #333;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  nav ul {
-    display: flex;
-    justify-content: center;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    color: #ff9800;
+    color: #333;
+    line-height: 1.6;
   }
   
   /* Header */
   header {
-    background: #ff9800;
-    color: #fff;
     text-align: center;
-    padding: 2rem 0;
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
   }
   
   header h1 {
@@ -55,6 +29,33 @@ body, h1, h2, h3, p, ul, nav, a {
   
   header p {
     font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+  
+  /* Navigation */
+  nav {
+    background: #555;
+    text-align: center;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #ff9800;
   }
   
   /* Sections */
@@ -63,19 +64,18 @@ body, h1, h2, h3, p, ul, nav, a {
   }
   
   section {
+    background: #fff;
     margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
   section h2 {
     border-bottom: 2px solid #333;
-    padding-bottom: 0.5rem;
     margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
     font-size: 1.5rem;
-  }
-  
-  section ul {
-    margin-top: 1rem;
-    padding-left: 1.5rem;
   }
   
   section ul li {
@@ -84,9 +84,8 @@ body, h1, h2, h3, p, ul, nav, a {
   
   /* Footer */
   footer {
-    text-align: center;
     background: #333;
     color: #fff;
+    text-align: center;
     padding: 1rem 0;
-    font-size: 0.9rem;
   }
