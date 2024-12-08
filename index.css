@@ -1,3 +1,4 @@
+/* General Styles */
 body, h1, h2, p, ul, a {
   margin: 0;
   padding: 0;
@@ -90,6 +91,15 @@ footer {
   padding: 1rem;
 }
 
+footer a {
+  color: #fff; /* Changes the link color to white */
+  text-decoration: none; /* Optional: Removes underline */
+}
+
+footer a:hover {
+  color: #ddd; /* Optional: Lightens the link color on hover */
+}
+
 .download-btn {
   display: inline-block;
   background: #007bff;
@@ -103,15 +113,6 @@ footer {
 
 .download-btn:hover {
   background: #0056b3;
-}
-
-footer a {
-  color: #fff; /* Changes the link color to white */
-  text-decoration: none; /* Optional: Removes underline */
-}
-
-footer a:hover {
-  color: #ddd; /* Optional: Lightens the link color on hover */
 }
 
 /* Contact Section Styling */
@@ -128,19 +129,33 @@ footer a:hover {
 .contact-icons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
+  gap: 2rem; /* Adjust gap between icons */
+  margin: 1.5rem 0;
+  align-items: center;
 }
 
 .contact-icons a {
   font-size: 2rem;
   color: #333;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Adds spacing between icon and fallback text */
   transition: color 0.3s ease;
 }
 
 .contact-icons a:hover {
   color: #ff9800; /* Icon hover color */
+}
+
+.contact-icons a span {
+  display: none; /* Fallback text hidden by default */
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-icons a i:empty + span {
+  display: inline; /* Show fallback text if icon fails to load */
 }
 
 #contact p {
