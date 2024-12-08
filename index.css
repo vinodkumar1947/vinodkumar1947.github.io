@@ -134,6 +134,19 @@ footer a:hover {
   align-items: center;
 }
 
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Spacing between icon and text */
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.contact-item i {
+  font-size: 1.8rem;
+  color: #333;
+}
+
 .contact-icons a {
   font-size: 2rem;
   color: #333;
@@ -146,16 +159,6 @@ footer a:hover {
 
 .contact-icons a:hover {
   color: #ff9800; /* Icon hover color */
-}
-
-.contact-icons a span {
-  display: none; /* Fallback text hidden by default */
-  font-size: 1rem;
-  color: #333;
-}
-
-.contact-icons a i:empty + span {
-  display: inline; /* Show fallback text if icon fails to load */
 }
 
 #contact p {
