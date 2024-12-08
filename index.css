@@ -21,6 +21,10 @@ header.hero h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
+header.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem; /* Adjust this value to increase or decrease the gap */
+}
 
 header.hero .btn {
   background: #ff9800;
@@ -29,6 +33,7 @@ header.hero .btn {
   text-decoration: none;
   border-radius: 5px;
   margin-top: 1rem;
+  margin-right: 0.5rem; /* Adds spacing between the buttons */
 }
 
 header.hero .btn:hover {
