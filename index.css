@@ -90,3 +90,12 @@ footer {
 .download-btn:hover {
   background: #0056b3;
 }
+
+footer a {
+  color: #fff; /* Changes the link color to white */
+  text-decoration: none; /* Optional: Removes underline */
+}
+
+footer a:hover {
+  color: #ddd; /* Optional: Lightens the link color on hover */
+}
