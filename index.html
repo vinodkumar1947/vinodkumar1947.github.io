@@ -10,10 +10,15 @@
 </head>
 <body>
   <header class="hero">
-    <h1>Vinod Kumar G</h1>
-    <p>Embedded Systems | IoT | Firmware Developer</p>
-    <a href="#contact" class="btn">Get in Touch</a>
-    <a href="vinod_resume.pdf" class="btn download-btn" download>Download Resume</a>
+    <div class="hero-content">
+      <img src="vinod_photo.jpeg" alt="Vinod Kumar G" class="profile-photo">
+      <div class="hero-text">
+        <h1>Vinod Kumar G</h1>
+        <p>Embedded Systems | IoT | Firmware Developer</p>
+        <!-- <a href="#contact" class="btn">Get in Touch</a> -->
+        <a href="vinod_resume.pdf" class="btn download-btn" download>Download Resume</a>
+      </div>
+    </div>
   </header>
   <nav>
     <ul>
@@ -27,62 +32,122 @@
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>I am a highly skilled Embedded Systems and IoT professional with over 12 years of experience. I specialize in creating scalable, high-performing firmware and IoT solutions using protocols like BLE, ZigBee, and NB-IoT. My goal is to deliver cutting-edge technology solutions that bridge hardware and software seamlessly.</p>
+      <p>With over 12 years of hands-on experience in Embedded Systems and IoT, I excel in designing and delivering cutting-edge solutions in firmware development, hardware design, and IoT integration. Skilled in leveraging protocols such as BLE, ZigBee, GSM, GPS, and NB-IoT, I bring expertise in real-time implementations on 8/16/32-bit microcontroller platforms. My work spans end-to-end product development, from board bring-up and post-silicon validation to team leadership and client engagement. Passionate about creating scalable, efficient, and innovative solutions that bridge hardware and software while ensuring optimal performance and reliability.</p>
     </section>
     <section id="skills">
       <h2>Skills</h2>
       <ul>
-        <li><strong>Languages:</strong> C, Embedded C, Python</li>
-        <li><strong>IoT Protocols:</strong> MQTT, CoAP, BLE, ZigBee</li>
-        <li><strong>Cloud Platforms:</strong> AWS, GCP</li>
-        <li><strong>RTOS:</strong> FreeRTOS, Contiki</li>
-        <li><strong>Hardware Design:</strong> PCB Design, KiCad, Eagle</li>
+        <li><strong>Languages:</strong> C, Embedded C, Python, Assembly</li>
+        <li><strong>IoT Application Protocols:</strong> MQTT, CoAP, HTTP, JSON</li>
+        <li><strong>RTOS:</strong> FreeRTOS, ThreadX, Contiki, OpenWRT</li>
+        <li><strong>Embedded Communication Protocols:</strong> UART, SPI, I2C, MODBUS, RS485, QSPI, OSPI, CAN</li>
+        <li><strong>IoT Link Protocols:</strong> GSM, NB-IoT, WiFi, GPS, Classic Bluetooth, BLE (4.0, 4.2, 5.0, 5.2), ZigBee, NFC</li>
+        <li><strong>Cloud Platforms:</strong> Amazon Web Services (AWS), Google Cloud Platform (GCP)</li>
+        <li><strong>Hardware Design:</strong> 
+          <ul>
+            <li>PCB Design Tools: KiCad, Eagle, OrCAD, Altium</li>
+            <li>Schematic Reading and Design</li>
+            <li>Microcontrollers: STM32, MSP430, Nordic nRF52, Atmel SAMD, Quectel BG96</li>
+          </ul>
+        </li>
+        <li><strong>Debugging Tools:</strong> JTAG Lauterbach (T32), Segger JLink, Atmel-ICE</li>
+        <li><strong>Testing Tools:</strong> Multimeter, Oscilloscope, Logic Analyzer</li>
+        <li><strong>DevOps Tools:</strong> Jenkins, GitHub, GitLab, Bitbucket, Confluence</li>
+        <li><strong>Frameworks and Libraries:</strong> Spring Boot, React, Django, NumPy, Pandas, Matplotlib, Seaborn</li>
+        <li><strong>Version Control:</strong> Git, GitLab, Bitbucket</li>
+        <li><strong>Methodologies:</strong> Agile, Scrum, Waterfall</li>
       </ul>
     </section>
     <section id="projects">
       <h2>Projects</h2>
       <div class="project">
         <h3>Smart Lighting Controller</h3>
-        <p>Developed a smart lighting solution using NB-IoT and ZigBee, enabling remote control and automation of lighting systems.</p>
+        <p>Designed and developed a smart lighting solution using NB-IoT and ZigBee. Enabled remote control and automation of lighting systems, optimizing energy usage and integrating real-time environmental data to enhance lighting efficiency.</p>
       </div>
       <div class="project">
         <h3>HVAC IoT Platform</h3>
-        <p>Created firmware for HVAC systems, integrating environmental sensors and BLE connectivity for data communication.</p>
+        <p>Developed firmware for smart thermostats, integrating environmental sensors like CO2, PM2.5, and temperature. Achieved seamless BLE and RF communication with cloud services for real-time monitoring and control.</p>
       </div>
       <div class="project">
         <h3>Vehicle Tracking System</h3>
-        <p>Designed a GPS-based vehicle tracking system with low-power operation and real-time data transmission.</p>
+        <p>Built a GPS-based tracking system with real-time location updates, optimized for low-power operation. Implemented triangulation methods for non-GPS-based tracking, ensuring robust tracking in all environments.</p>
+      </div>
+      <div class="project">
+        <h3>IoT Weather Monitoring System</h3>
+        <p>Developed a real-time weather monitoring system using Raspberry Pi and environmental sensors. Integrated AWS IoT for data storage and visualization using Python-based dashboards.</p>
+      </div>
+      <div class="project">
+        <h3>BLE Fitness Tracker</h3>
+        <p>Designed a BLE-enabled fitness tracker with features like step count, heart rate monitoring, and calorie tracking. Integrated with a mobile app for real-time updates and data analysis.</p>
       </div>
     </section>
     <section id="experience">
       <h2>Experience</h2>
-      <h3>Senior Software Engineer - Susash Consulting Services LLC</h3>
-      <p><strong>Sep 2022 - Oct 2023</strong></p>
-      <ul>
-        <li>Worked on machine software feature development for Caterpillar Inc.</li>
-        <li>Integrated subsystem diagrams and software libraries.</li>
-      </ul>
-      <h3>Lead-II Embedded Software - UST Global</h3>
-      <p><strong>Mar 2021 - Jul 2022</strong></p>
-      <ul>
-        <li>Developed firmware for smart lighting controllers using NB-IoT and ZigBee.</li>
-        <li>Collaborated with QA engineers for thorough testing and debugging.</li>
-      </ul>
+    
+      <div class="experience">
+        <h3>Senior Software Engineer - Susash Consulting Services LLC</h3>
+        <p><strong>Sep 2022 – Oct 2023</strong></p>
+        <ul>
+          <li>Led development of machine software features for Caterpillar Inc., including subsystem integration and calibration.</li>
+          <li>Streamlined software defect resolution processes, reducing turnaround time by 30%.</li>
+          <li>Collaborated on test plan development and software validation to meet customer and field requirements.</li>
+        </ul>
+      </div>
+    
+      <div class="experience">
+        <h3>Lead-II Embedded Software - UST Global</h3>
+        <p><strong>Mar 2021 – Jul 2022</strong></p>
+        <ul>
+          <li>Developed firmware for smart lighting controllers utilizing NB-IoT and ZigBee communication protocols.</li>
+          <li>Guided a team of engineers to migrate legacy products to updated versions and enhance system performance.</li>
+          <li>Collaborated with QA engineers to implement thorough testing processes and troubleshoot hardware and firmware issues.</li>
+        </ul>
+      </div>
+    
+      <div class="experience">
+        <h3>Senior Firmware Engineer - 75F</h3>
+        <p><strong>Dec 2019 – Jan 2021</strong></p>
+        <ul>
+          <li>Designed firmware for HVAC platforms, integrating BLE and RF communication with environmental sensors like CO2, PM2.5, and temperature.</li>
+          <li>Enhanced BLE stack applications and updated RF physical layer components for optimized data communication.</li>
+          <li>Collaborated with product managers and support teams to address field issues and improve product performance.</li>
+        </ul>
+      </div>
+    
+      <div class="experience">
+        <h3>Advanced Consultant - Altran India Pvt. Ltd</h3>
+        <p><strong>Feb 2016 – Jan 2019</strong></p>
+        <ul>
+          <li>Performed post-silicon validation and testing for Qualcomm chipsets, developing automated test scripts in Python and C.</li>
+          <li>Led production validation activities for NOC and SPI protocols, ensuring adherence to design requirements.</li>
+          <li>Authored low-level drivers and developed log processing scripts to analyze test results for System-on-Chip (SoC) platforms.</li>
+        </ul>
+      </div>
+    
+      <div class="experience">
+        <h3>Embedded Engineer - Real Time Signals</h3>
+        <p><strong>Jan 2014 – May 2015</strong></p>
+        <ul>
+          <li>Designed applications for vehicle tracking systems, implementing GPS-based and triangulation tracking methods.</li>
+          <li>Developed firmware for smart plugs and environmental monitoring sensors using Embedded C.</li>
+          <li>Conducted schematic design, hardware debugging, and testing for IoT-based projects.</li>
+        </ul>
+      </div>
     </section>
     <section id="contact">
       <h2>Contact Me</h2>
       <div class="contact-icons">
         <!-- Email -->
-        <div class="contact-item">
+        <a href="mailto:vinodkumar1947@gmail.com" class="contact-item" title="Email">
           <i class="fa fa-envelope"></i>
           <span>vinodkumar1947@gmail.com</span>
-        </div>
+        </a>
     
         <!-- Phone -->
-        <div class="contact-item">
+        <a href="tel:+18474569060" class="contact-item" title="Phone">
           <i class="fa fa-phone"></i>
           <span>+1 (847) 456-9060</span>
-        </div>
+        </a>
     
         <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/vinod-kumar-gorrepati" target="_blank" title="LinkedIn">
@@ -93,9 +158,13 @@
         <a href="https://github.com/vinodkumar1947" target="_blank" title="GitHub">
           <i class="fa fa-github"></i>
         </a>
+        <!-- Website -->
+        <a href="https://vinodkumargorrepati.netlify.app/" target="_blank" title="My Website">
+          <i class="fa fa-globe"></i>
+        </a>
       </div>
-      <p>Feel free to reach out via email, phone, LinkedIn, or check out my GitHub profile!</p>
-    </section>
+      <p>Feel free to reach out via email, phone, LinkedIn, or visit my personal website!</p>
+        </section>
   </main>
   <footer>
     <p>&copy; 2024 Vinod Kumar Gorrepati | <a href="https://vinodkumar1947.github.io/">vinodkumar1947.github.io</a></p>
