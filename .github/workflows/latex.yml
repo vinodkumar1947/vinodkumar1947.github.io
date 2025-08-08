@@ -9,13 +9,20 @@ on:
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-    - uses: xu-cheng/latex-action@v2
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Compile LaTeX to PDF
+      uses: xu-cheng/latex-action@v2
       with:
         root_file: resume.tex
-    - name: Upload PDF
-      uses: actions/upload-artifact@v3
-      with:
-        name: resume
-        path: resume.pdf
+
+    - name: Commit and push compiled PDF
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add resume.pdf || echo "Nothing to add"
+        git diff --cached --quiet || git commit -m "Auto-update resume.pdf from resume.tex"
+        git push
