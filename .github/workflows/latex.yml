@@ -17,10 +17,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Compile LaTeX to PDF
+    - name: Compile LaTeX with XeLaTeX
       uses: xu-cheng/latex-action@v2
       with:
         root_file: resume.tex
+        latexmk_use_xelatex: true
 
     - name: Commit and push compiled PDF
       run: |
