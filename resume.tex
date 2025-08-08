@@ -1,25 +1,50 @@
 
 \documentclass[10pt]{article}
 \usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{parskip}
 
-\titleformat{\section}{\bfseries\Large}{}{0em}{}
-\titleformat{\subsection}{\bfseries}{}{0em}{}
+% Fonts
+\setmainfont{Helvetica Neue}
+\setsansfont{Helvetica Neue}
 
-\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+% Color theme
+\definecolor{primary}{HTML}{0A66C2}
+\definecolor{heading}{HTML}{333333}
+\definecolor{text}{HTML}{444444}
+\definecolor{linkcolor}{HTML}{0A66C2}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=linkcolor,
+    linkcolor=linkcolor
+}
+
+% Section title formatting
+\titleformat{\section}
+  {\color{primary}\Large\bfseries}
+  {}{0em}{}
+\titlespacing*{\section}{0pt}{1.2em}{0.5em}
+
+\titleformat{\subsection}
+  {\color{heading}\bfseries}
+  {}{0em}{}
+\titlespacing*{\subsection}{0pt}{1em}{0.3em}
+
+\renewcommand{\labelitemi}{\textcolor{primary}{\small\textbullet}}
 
 \begin{document}
 
 \begin{center}
-    {\LARGE \textbf{Vinod Kumar G}} \\
-    \href{mailto:vinodkumar1947@gmail.com}{vinodkumar1947@gmail.com} \quad
-    +1 (847) 456-9060 \quad
-    \href{https://www.linkedin.com/in/vinod-kumar-gorrepati}{linkedin.com/in/vinod-kumar-gorrepati} \\
-    \vspace{0.2cm}
+    {\Huge \textbf{Vinod Kumar Gorrepati}} \\[4pt]
+    \href{mailto:vinodkumar1947@gmail.com}{vinodkumar1947@gmail.com} \quad | \quad +1 (847) 456-9060 \quad | \quad \href{https://www.linkedin.com/in/vinod-kumar-gorrepati}{linkedin.com/in/vinod-kumar-gorrepati}
 \end{center}
+
+\vspace{1em}
 
 \section*{Summary}
 Senior Embedded Software Engineer with 13+ years of experience in designing, developing, and testing embedded and IoT systems. Proficient in Embedded C/C++, Python, real-time microcontroller programming (8/16/32-bit), IoT protocols (BLE, ZigBee, GSM, NB-IoT), and post-silicon validation. Demonstrated expertise in board bring-up, RTOS-based development, and secure, scalable firmware solutions across industries including automotive, HVAC, healthcare, and smart lighting.
@@ -31,7 +56,7 @@ Senior Embedded Software Engineer with 13+ years of experience in designing, dev
   \item \textbf{Protocols:} UART, SPI, I2C, MODBUS, CAN, BLE (4.0–5.2), ZigBee, GSM, NB-IoT, NFC, GPS
   \item \textbf{Tools/IDEs:} IAR, Keil, CCS, MPLAB X, AVR Studio, Lauterbach, Segger, Git, Jenkins
   \item \textbf{Microcontrollers:} STM32, MSP430, SAMD/SAML, nRF52, LPC2148, ATmega, BG96
-  \item \textbf{Hardware:} Oscilloscope, Logic Analyzer, Eagle, KiCad, Altium, PCB design \& bring-up
+  \item \textbf{Hardware:} Oscilloscope, Logic Analyzer, Eagle, KiCad, Altium, PCB design and bring-up
   \item \textbf{DevOps:} GitHub, GitLab, Jenkins, Jira, Confluence
 \end{itemize}
 
