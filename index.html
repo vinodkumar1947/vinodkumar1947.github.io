@@ -13,7 +13,7 @@
             padding: 0;
         }
         header {
-            background: #007acc;
+            background: #005fa3;
             color: white;
             padding: 40px 20px;
             text-align: center;
@@ -64,14 +64,14 @@
         .download-button a {
             text-decoration: none;
             color: white;
-            background-color: #007acc;
+            background-color: #005fa3;
             padding: 14px 28px;
             border-radius: 6px;
             font-size: 16px;
             display: inline-block;
         }
         .download-button a:hover {
-            background-color: #005fa3;
+            background-color: #004a80;
         }
         .projects {
             padding: 40px 20px;
@@ -127,89 +127,27 @@
             text-align: center;
             padding: 20px;
             font-size: 0.9em;
-            color: #777;
+            color: #666;
+        }
+        footer a {
+            color: #005fa3;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Vinod Kumar Gorrepati</h1>
+<header role="banner">
+    <h1 id="site-title">Vinod Kumar Gorrepati</h1>
     <p>Senior Embedded Software Engineer</p>
-    <img src="https://avatars.githubusercontent.com/u/10742350?v=4" alt="Vinod's Photo">
+    <img src="https://avatars.githubusercontent.com/u/10742350?v=4" alt="Profile photo of Vinod Kumar Gorrepati">
 </header>
 
-<nav>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
 
-<section id="about" class="content">
-    <h2>About</h2>
-    <p>Welcome to my online resume. I specialize in embedded systems, IoT platforms, real-time firmware development, and hardware validation. I am passionate about building reliable systems that bridge hardware and software.</p>
-
-    <div class="download-button">
+    <nav class="download-button" role="navigation" aria-label="Resume download">
         <a href="resume.pdf" target="_blank">📄 View / Download Resume</a>
-    </div>
-</section>
 
-<section id="experience" class="content">
-    <h2>Experience</h2>
-    <ul>
-        <li>Senior Embedded Software Engineer at TechCorp – Led design for IoT devices and edge platforms.</li>
-        <li>Firmware Engineer at StartUp – Delivered real-time operating system features and hardware validation tools.</li>
-    </ul>
-</section>
 
-<section id="projects" class="content">
-    <h2>Projects</h2>
-    <ul>
-        <li>IoT Home Automation – Built cross-platform firmware to manage sensors and actuators.</li>
-        <li>Robotics Control System – Developed C++ libraries for real-time motion control and diagnostics.</li>
-    </ul>
-</section>
-
-<section id="contact" class="content">
-    <h2>Contact</h2>
-    <p>If you'd like to collaborate or have any questions, feel free to reach out.</p>
-    <p><a href="mailto:vinodkumar1947@gmail.com">vinodkumar1947@gmail.com</a> | <a href="https://github.com/vinodkumar1947" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/vinodkumar1947" target="_blank">LinkedIn</a></p>
-</section>
-
-<section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-        <div class="project-card">
-            <img src="https://via.placeholder.com/300x160?text=Sensor+Network" alt="Wireless Sensor Network">
-            <div class="card-content">
-                <h3>Wireless Sensor Network</h3>
-                <p>Low-power nodes for environmental monitoring and data aggregation.</p>
-                <a href="https://github.com/vinodkumar1947/wireless-sensor-network" target="_blank">View Project</a>
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="https://via.placeholder.com/300x160?text=Dashboard" alt="Monitoring Dashboard">
-            <div class="card-content">
-                <h3>Monitoring Dashboard</h3>
-                <p>Web dashboard that visualizes real-time data from embedded devices.</p>
-                <a href="https://github.com/vinodkumar1947/monitoring-dashboard" target="_blank">See Demo</a>
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="https://via.placeholder.com/300x160?text=OTA+Updater" alt="Firmware OTA Updater">
-            <div class="card-content">
-                <h3>Firmware OTA Updater</h3>
-                <p>Secure over-the-air firmware update mechanism for IoT devices.</p>
-                <a href="https://github.com/vinodkumar1947/ota-updater" target="_blank">View Project</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer>
+<footer role="contentinfo">
     © 2025 Vinod Kumar Gorrepati • <a href="mailto:vinodkumar1947@gmail.com">vinodkumar1947@gmail.com</a>
 </footer>
 
