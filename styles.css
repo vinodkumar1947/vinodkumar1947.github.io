@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #007acc;
+    --primary-dark: #005fa3;
+    --background-start: #f4f4f4;
+    --background-end: #eaeaea;
+    --text-color: #333;
+    --spacing: 20px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(to bottom, var(--background-start), var(--background-end));
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: var(--primary-color);
+    color: white;
+    padding: 40px var(--spacing);
+    text-align: center;
+}
+
+header img {
+    width: 120px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+h1 {
+    margin-bottom: 0.3em;
+}
+
+.content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 var(--spacing);
+    text-align: center;
+}
+
+.content p {
+    font-size: 1.1em;
+}
+
+.download-button {
+    margin-top: 30px;
+}
+
+.download-button a {
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-size: 16px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.download-button a:hover {
+    background-color: var(--primary-dark);
+}
+
+.info-cards {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing);
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: var(--spacing);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 260px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 20px var(--spacing);
+    }
+    .info-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
