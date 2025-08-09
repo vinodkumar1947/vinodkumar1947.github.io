@@ -73,6 +73,55 @@
         .download-button a:hover {
             background-color: #005fa3;
         }
+        .projects {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .projects h2 {
+            margin-bottom: 30px;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .project-card .card-content {
+            padding: 15px;
+            flex: 1;
+        }
+        .project-card h3 {
+            margin-top: 0;
+        }
+        .project-card p {
+            font-size: 0.95em;
+        }
+        .project-card a {
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: #007acc;
+            padding: 10px 16px;
+            border-radius: 4px;
+        }
+        .project-card a:hover {
+            background-color: #005fa3;
+        }
         footer {
             margin-top: 50px;
             text-align: center;
@@ -128,6 +177,36 @@
     <h2>Contact</h2>
     <p>If you'd like to collaborate or have any questions, feel free to reach out.</p>
     <p><a href="mailto:vinodkumar1947@gmail.com">vinodkumar1947@gmail.com</a> | <a href="https://github.com/vinodkumar1947" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/vinodkumar1947" target="_blank">LinkedIn</a></p>
+</section>
+
+<section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300x160?text=Sensor+Network" alt="Wireless Sensor Network">
+            <div class="card-content">
+                <h3>Wireless Sensor Network</h3>
+                <p>Low-power nodes for environmental monitoring and data aggregation.</p>
+                <a href="https://github.com/vinodkumar1947/wireless-sensor-network" target="_blank">View Project</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300x160?text=Dashboard" alt="Monitoring Dashboard">
+            <div class="card-content">
+                <h3>Monitoring Dashboard</h3>
+                <p>Web dashboard that visualizes real-time data from embedded devices.</p>
+                <a href="https://github.com/vinodkumar1947/monitoring-dashboard" target="_blank">See Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="https://via.placeholder.com/300x160?text=OTA+Updater" alt="Firmware OTA Updater">
+            <div class="card-content">
+                <h3>Firmware OTA Updater</h3>
+                <p>Secure over-the-air firmware update mechanism for IoT devices.</p>
+                <a href="https://github.com/vinodkumar1947/ota-updater" target="_blank">View Project</a>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>
