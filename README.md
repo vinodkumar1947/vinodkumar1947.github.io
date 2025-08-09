@@ -1,8 +1,12 @@
-# Resume Build Instructions
+# Portfolio Website
 
-This repository contains `resume.tex`, the source of the resume, and the generated `resume.pdf`.
+This repository hosts the personal portfolio for Vinod Kumar Gorrepati along with the LaTeX source and generated PDF of his resume.
 
-## Build
+## Website
+
+Open `index.html` in a browser to explore the site. Styles are defined in `styles.css` and basic interactivity is handled by `script.js`.
+
+## Resume
 
 Ensure `pdflatex` is installed and available on your `PATH` (e.g., via TeX Live).
 
