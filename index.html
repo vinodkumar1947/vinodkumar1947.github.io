@@ -26,6 +26,29 @@
         h1 {
             margin-bottom: 0.3em;
         }
+        nav {
+            background: #333;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+        nav a:hover {
+            background-color: #005fa3;
+        }
         .content {
             max-width: 800px;
             margin: 40px auto;
@@ -67,13 +90,45 @@
     <img src="https://avatars.githubusercontent.com/u/10742350?v=4" alt="Vinod's Photo">
 </header>
 
-<div class="content">
-    <p>Welcome to my online resume. I specialize in embedded systems, IoT platforms, real-time firmware development, and hardware validation.</p>
+<nav>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="about" class="content">
+    <h2>About</h2>
+    <p>Welcome to my online resume. I specialize in embedded systems, IoT platforms, real-time firmware development, and hardware validation. I am passionate about building reliable systems that bridge hardware and software.</p>
 
     <div class="download-button">
         <a href="resume.pdf" target="_blank">📄 View / Download Resume</a>
     </div>
-</div>
+</section>
+
+<section id="experience" class="content">
+    <h2>Experience</h2>
+    <ul>
+        <li>Senior Embedded Software Engineer at TechCorp – Led design for IoT devices and edge platforms.</li>
+        <li>Firmware Engineer at StartUp – Delivered real-time operating system features and hardware validation tools.</li>
+    </ul>
+</section>
+
+<section id="projects" class="content">
+    <h2>Projects</h2>
+    <ul>
+        <li>IoT Home Automation – Built cross-platform firmware to manage sensors and actuators.</li>
+        <li>Robotics Control System – Developed C++ libraries for real-time motion control and diagnostics.</li>
+    </ul>
+</section>
+
+<section id="contact" class="content">
+    <h2>Contact</h2>
+    <p>If you'd like to collaborate or have any questions, feel free to reach out.</p>
+    <p><a href="mailto:vinodkumar1947@gmail.com">vinodkumar1947@gmail.com</a> | <a href="https://github.com/vinodkumar1947" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/vinodkumar1947" target="_blank">LinkedIn</a></p>
+</section>
 
 <footer>
     © 2025 Vinod Kumar Gorrepati • <a href="mailto:vinodkumar1947@gmail.com">vinodkumar1947@gmail.com</a>
