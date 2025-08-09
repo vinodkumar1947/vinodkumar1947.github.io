@@ -13,7 +13,7 @@
             padding: 0;
         }
         header {
-            background: #007acc;
+            background: #005fa3;
             color: white;
             padding: 40px 20px;
             text-align: center;
@@ -41,41 +41,44 @@
         .download-button a {
             text-decoration: none;
             color: white;
-            background-color: #007acc;
+            background-color: #005fa3;
             padding: 14px 28px;
             border-radius: 6px;
             font-size: 16px;
             display: inline-block;
         }
         .download-button a:hover {
-            background-color: #005fa3;
+            background-color: #004a80;
         }
         footer {
             margin-top: 50px;
             text-align: center;
             padding: 20px;
             font-size: 0.9em;
-            color: #777;
+            color: #666;
+        }
+        footer a {
+            color: #005fa3;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Vinod Kumar Gorrepati</h1>
+<header role="banner">
+    <h1 id="site-title">Vinod Kumar Gorrepati</h1>
     <p>Senior Embedded Software Engineer</p>
-    <img src="https://avatars.githubusercontent.com/u/10742350?v=4" alt="Vinod's Photo">
+    <img src="https://avatars.githubusercontent.com/u/10742350?v=4" alt="Profile photo of Vinod Kumar Gorrepati">
 </header>
 
-<div class="content">
+<main class="content" role="main" aria-labelledby="site-title">
     <p>Welcome to my online resume. I specialize in embedded systems, IoT platforms, real-time firmware development, and hardware validation.</p>
 
-    <div class="download-button">
+    <nav class="download-button" role="navigation" aria-label="Resume download">
         <a href="resume.pdf" target="_blank">📄 View / Download Resume</a>
-    </div>
-</div>
+    </nav>
+</main>
 
-<footer>
+<footer role="contentinfo">
     © 2025 Vinod Kumar Gorrepati • <a href="mailto:vinodkumar1947@gmail.com">vinodkumar1947@gmail.com</a>
 </footer>
 
