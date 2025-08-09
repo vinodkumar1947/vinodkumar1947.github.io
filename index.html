@@ -26,6 +26,29 @@
         h1 {
             margin-bottom: 0.3em;
         }
+        nav {
+            background: #333;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+        nav a:hover {
+            background-color: #005fa3;
+        }
         .content {
             max-width: 800px;
             margin: 40px auto;
@@ -50,6 +73,55 @@
         .download-button a:hover {
             background-color: #004a80;
         }
+        .projects {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .projects h2 {
+            margin-bottom: 30px;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .project-card .card-content {
+            padding: 15px;
+            flex: 1;
+        }
+        .project-card h3 {
+            margin-top: 0;
+        }
+        .project-card p {
+            font-size: 0.95em;
+        }
+        .project-card a {
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: #007acc;
+            padding: 10px 16px;
+            border-radius: 4px;
+        }
+        .project-card a:hover {
+            background-color: #005fa3;
+        }
         footer {
             margin-top: 50px;
             text-align: center;
@@ -70,13 +142,10 @@
     <img src="https://avatars.githubusercontent.com/u/10742350?v=4" alt="Profile photo of Vinod Kumar Gorrepati">
 </header>
 
-<main class="content" role="main" aria-labelledby="site-title">
-    <p>Welcome to my online resume. I specialize in embedded systems, IoT platforms, real-time firmware development, and hardware validation.</p>
 
     <nav class="download-button" role="navigation" aria-label="Resume download">
         <a href="resume.pdf" target="_blank">📄 View / Download Resume</a>
-    </nav>
-</main>
+
 
 <footer role="contentinfo">
     © 2025 Vinod Kumar Gorrepati • <a href="mailto:vinodkumar1947@gmail.com">vinodkumar1947@gmail.com</a>
