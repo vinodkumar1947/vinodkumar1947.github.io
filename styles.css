@@ -1,116 +1,150 @@
 :root {
-    --primary-color: #007acc;
-    --primary-dark: #005fa3;
-    --background-start: #f4f4f4;
-    --background-end: #eaeaea;
-    --text-color: #333;
-    --spacing: 20px;
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --primary: #007acc;
+  --background: #f4f4f4;
+  --text: #333;
+  --dark-background: #111;
+  --dark-text: #f4f4f4;
 }
 
 body {
-    font-family: var(--font-family);
-    background: linear-gradient(to bottom, var(--background-start), var(--background-end));
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
 }
 
-header {
-    background: var(--primary-color);
-    color: white;
-    padding: 40px var(--spacing);
-    text-align: center;
+body.dark {
+  background: var(--dark-background);
+  color: var(--dark-text);
 }
 
-header img {
-    width: 120px;
-    border-radius: 50%;
-    margin-top: 20px;
+.hero {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-h1 {
-    margin-bottom: 0.3em;
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
-.content {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 var(--spacing);
-    text-align: center;
+.site-nav a,
+.site-nav button {
+  color: #fff;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-.content p {
-    font-size: 1.1em;
+.profile {
+  width: 140px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
-.download-button {
-    margin-top: 30px;
+.tagline {
+  margin-top: 0;
 }
 
-.download-button a {
-    text-decoration: none;
-    color: white;
-    background-color: var(--primary-color);
-    padding: 14px 28px;
-    border-radius: 6px;
-    font-size: 16px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
+.social-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
 }
 
-.download-button a:hover {
-    background-color: var(--primary-dark);
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-.info-cards {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing);
-    margin-top: 40px;
-    flex-wrap: wrap;
+section {
+  margin-bottom: 60px;
 }
 
-.card {
-    background: #fff;
-    border-radius: 8px;
-    padding: var(--spacing);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: 260px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+.skills-list li {
+  background: var(--primary);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
 }
 
-.card i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+body.dark .project {
+  background: #222;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 footer {
-    margin-top: 50px;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
-    color: #777;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+body.dark footer {
+  color: #aaa;
 }
 
 @media (max-width: 600px) {
-    header {
-        padding: 20px var(--spacing);
-    }
-    .info-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-    .card {
-        width: 100%;
-        max-width: 300px;
-    }
+  .site-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
