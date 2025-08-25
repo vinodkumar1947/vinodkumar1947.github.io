@@ -1,43 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vinod Kumar Gorrepati</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vinod Kumar Gorrepati — Portfolio</title>
+  <meta name="description" content="Technology professional with 13+ years in embedded systems, IoT, and software engineering. Freelance consultant and mentor." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #0f172a;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --brand: #10b981; /* teal/green */
+      --brand-2: #38bdf8; /* blue */
+      --card: #111827;
+      --border: #1f2937;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Poppins",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Layout */
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(11,18,32,.9), rgba(11,18,32,.6) 70%, rgba(11,18,32,0));backdrop-filter:blur(10px);}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;font-weight:700}
+    .brand .name{font-weight:700}
+    .nav a{opacity:.9}
+    .links{display:flex;gap:18px}
+    .btn{display:inline-flex;gap:10px;align-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#041316;padding:10px 16px;border-radius:999px;font-weight:600;box-shadow:var(--shadow)}
+
+    /* Hero */
+    .hero{padding:72px 0 32px}
+    .hero-inner{display:grid;grid-template-columns:1.3fr .7fr;gap:28px}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--muted);font-size:12px}
+    h1{font-size:40px;line-height:1.15;margin:14px 0 16px}
+    .lead{color:var(--muted);font-size:18px}
+    .hero-cta{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-card{padding:20px}
+
+    /* Sections */
+    section{padding:44px 0}
+    h2{font-size:26px;margin:0 0 18px}
+    .muted{color:var(--muted)}
+
+    /* Skills */
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:1px solid var(--border);background:#0c1222;padding:8px 12px;border-radius:999px;font-size:13px;color:#cbd5e1}
+
+    /* Projects */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .proj{display:flex;flex-direction:column;padding:18px}
+    .proj h3{margin:6px 0 10px;font-size:18px}
+    .proj p{margin:0 0 14px;color:#c7d2fe}
+    .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+    .tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);color:#93c5fd}
+    .proj a.link{margin-top:14px;font-size:14px;color:#7dd3fc}
+
+    /* Contact */
+    .contact-card{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .contact-card a{word-break:break-word}
+
+    /* Footer */
+    footer{padding:26px 0;border-top:1px solid var(--border);color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-inner{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .contact-card{grid-template-columns:1fr}
+    }
+    @media (max-width: 600px){
+      h1{font-size:32px}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
-  <header class="hero" role="banner">
-    <nav class="site-nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="skills.html">Skills</a>
-      <a href="projects.html">Projects</a>
-      <a href="resume.html">Resume</a>
-      <a href="contact.html">Contact</a>
-      <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
-    </nav>
-    <div class="hero-content">
-      <img class="profile" src="https://avatars.githubusercontent.com/u/10742350?v=4" alt="Portrait of Vinod Kumar Gorrepati">
-      <h1>Vinod Kumar Gorrepati</h1>
-      <p class="tagline">Senior Embedded Software Engineer</p>
-      <div class="social-links">
-        <a href="https://github.com/vinodkumar1947" target="_blank" rel="noopener">GitHub</a>
-        <a href="mailto:vinodkumar1947@gmail.com">Email</a>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">VG</div>
+        <div class="name">Vinod Kumar Gorrepati</div>
       </div>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#contact">Hire Me</a>
+      </nav>
     </div>
   </header>
 
-  <main>
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-card card">
+          <span class="badge">13+ years • Embedded • IoT • Software</span>
+          <h1>Building reliable IoT & software solutions, freelancing for clients, and mentoring tech careers.</h1>
+          <p class="lead">I’m a technology professional specializing in embedded systems, IoT, and software engineering. I design and deliver production‑ready systems and guide teams and individuals to level up their engineering craft.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn" href="#contact" style="background:transparent;border:1px solid var(--border);color:var(--text);box-shadow:none">Get in Touch</a>
+          </div>
+        </div>
+        <div class="card hero-card">
+          <h3 style="margin:6px 0 10px">Quick Facts</h3>
+          <ul class="muted" style="margin:0 0 10px 18px;line-height:1.8">
+            <li>Expertise: Embedded C/C++, RTOS, BLE/ZigBee, MQTT, NB‑IoT</li>
+            <li>Cloud/AI: GCP/AWS, Python, ML pipelines, RAG/LLM integrations</li>
+            <li>Freelance: Delivered client projects across IoT & web</li>
+            <li>Mentor: Career guidance & interview prep</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">ESP8266/ESP32</span>
+            <span class="chip">RC4 (enhanced)</span>
+            <span class="chip">MQTT</span>
+            <span class="chip">Firestore</span>
+            <span class="chip">React</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">Docker/K8s</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p class="muted">I’m <strong>Vinod Kumar Gorrepati</strong>, a technology professional with <strong>13+ years</strong> in <strong>embedded systems</strong>, <strong>IoT</strong>, and <strong>software engineering</strong>. I build resilient products, help clients through <strong>freelancing projects</strong>, and mentor engineers to accelerate their careers.</p>
+    </section>
+
+    <!-- Skills -->
     <section>
-      <h2>Welcome</h2>
-      <p>I'm a senior embedded software engineer who has delivered robust firmware for industrial and IoT platforms. My goal is to create secure, efficient systems and mentor teams pushing the boundaries of embedded innovation.</p>
+      <h2>Core Skills</h2>
+      <div class="chips">
+        <span class="chip">Embedded C/C++</span>
+        <span class="chip">RTOS & Bare‑Metal</span>
+        <span class="chip">BLE / ZigBee</span>
+        <span class="chip">NB‑IoT / GSM / GPS</span>
+        <span class="chip">Python</span>
+        <span class="chip">FastAPI</span>
+        <span class="chip">React</span>
+        <span class="chip">MQTT</span>
+        <span class="chip">Firestore / BigQuery</span>
+        <span class="chip">ML/LLM Integrations</span>
+        <span class="chip">Docker / Kubernetes</span>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <article class="proj card">
+          <span class="tag">Firmware • Production</span>
+          <h3>Smart Lighting Firmware</h3>
+          <p>Low‑power BLE/ZigBee firmware with OTA bootloader, secure pairing, and energy profiling.</p>
+          <a class="link" href="#">Repo / Case Study →</a>
+        </article>
+        <article class="proj card">
+          <span class="tag">IoT • NB‑IoT</span>
+          <h3>HVAC IoT Controller</h3>
+          <p>NB‑IoT controller with MQTT pipeline, board bring‑up, and automated HIL test suite (PyTest/Robot).</p>
+          <a class="link" href="#">Repo / Case Study →</a>
+        </article>
+        <article class="proj card">
+          <span class="tag">Cloud • LLM</span>
+          <h3>HR RAG Assistant</h3>
+          <p>Enterprise RAG assistant using Vertex AI + FAISS for onboarding and policy Q&A.</p>
+          <a class="link" href="#">Repo / Case Study →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Testimonials (placeholder) -->
+    <section>
+      <h2>Testimonials</h2>
+      <div class="card" style="padding:18px">
+        <p class="muted">“Vinod quickly understood our constraints and delivered a robust IoT prototype that moved us to pilot in weeks.” — <em>Client, 2025</em></p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card contact-card">
+        <div>
+          <p>Email<br><a href="mailto:vinodkumar1947@gmail.com">vinodkumar1947@gmail.com</a></p>
+          <p>LinkedIn<br><a href="https://www.linkedin.com/in/vinod-kumar-gorrepati" target="_blank" rel="noreferrer">linkedin.com/in/vinod-kumar-gorrepati</a></p>
+        </div>
+        <div>
+          <p>Location<br>Northbrook, Illinois, USA</p>
+          <p>Open to<br>Freelance consulting, advisory, and mentoring</p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer role="contentinfo">
-    © 2025 Vinod Kumar Gorrepati
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Vinod Kumar Gorrepati · Built with care</p>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
