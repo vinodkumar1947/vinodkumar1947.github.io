@@ -94,6 +94,11 @@
     header{ border-bottom:1px solid color-mix(in oklab, var(--border), transparent 30%);}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
     .nav a{opacity:.95; position:relative; transition:opacity .2s ease}
+    /* Increase spacing between header links and buttons */
+    .links{ display:flex; align-items:center; gap:28px }
+    @media (min-width: 900px){
+      .links{ gap:36px }
+    }
     .nav a::after{
       content:"";
       position:absolute; left:0; right:0; bottom:-6px; height:2px;
@@ -120,7 +125,7 @@
 
     /* Hero */
     .hero{padding:72px 0 32px}
-    .hero-inner{display:grid;grid-template-columns:1.3fr .7fr;gap:28px}
+    .hero-inner{display:grid;grid-template-columns:1.3fr .7fr;gap:36px}
     .badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--muted);font-size:12px}
     .hero h1{
       background: linear-gradient(90deg, var(--brand), var(--brand-2));
@@ -135,7 +140,7 @@
     .hero-card{padding:20px}
 
     /* Sections */
-    section{padding:44px 0}
+    section{padding:56px 0}
     h2{font-size:26px;margin:0 0 18px}
     .muted{color:var(--muted)}
 
