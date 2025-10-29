@@ -25,44 +25,113 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b1220;
+      /* Dark theme (default) */
+      --bg: #0b1120;
+      --bg-accent: #0b1120;
       --panel: #0f172a;
+      --surface: rgba(17, 24, 39, 0.6);
       --muted: #94a3b8;
       --text: #e2e8f0;
       --brand: #10b981; /* teal/green */
       --brand-2: #38bdf8; /* blue */
-      --card: #111827;
+      --card: #0b1220;
       --border: #1f2937;
-      --radius: 18px;
+      --radius: 20px;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --ring: 0 0 0 2px rgba(56,189,248,.35);
+    }
+    body[data-theme="light"] {
+      --bg: #f7fafc;
+      --bg-accent: #f1f5f9;
+      --panel: #ffffffcc;
+      --surface: rgba(255,255,255,0.7);
+      --muted: #475569;
+      --text: #0f172a;
+      --brand: #0ea5e9;
+      --brand-2: #10b981;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --shadow: 0 10px 30px rgba(2,6,23,.08);
+      --ring: 0 0 0 2px rgba(14,165,233,.25);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Poppins",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Poppins",sans-serif}
+
+    /* Decorative background layers */
+    body::before{
+      content:"";
+      position:fixed; inset:0; z-index:-2;
+      background:
+        radial-gradient(60rem 60rem at 80% -10%, color-mix(in oklab, var(--brand) 30%, transparent), transparent 50%),
+        radial-gradient(50rem 50rem at -10% 20%, color-mix(in oklab, var(--brand-2) 30%, transparent), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+    }
+    body::after{
+      content:"";
+      position:fixed; inset:0; z-index:-1; pointer-events:none;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 48px 48px, 48px 48px;
+      mask-image: radial-gradient(80rem 80rem at 50% 10%, black, transparent 70%);
+    }
+
+    /* Type scale */
+    h1{font-size: clamp(36px, 5vw, 48px); line-height:1.12; margin:14px 0 16px}
+    h2{font-size: clamp(22px, 2.5vw, 28px); letter-spacing:.3px}
+    .lead{font-size: clamp(16px, 1.4vw, 19px)}
+
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
     /* Layout */
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
     header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(11,18,32,.9), rgba(11,18,32,.6) 70%, rgba(11,18,32,0));backdrop-filter:blur(10px);}
+    header{ border-bottom:1px solid color-mix(in oklab, var(--border), transparent 30%);}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .nav a{opacity:.95; position:relative; transition:opacity .2s ease}
+    .nav a::after{
+      content:"";
+      position:absolute; left:0; right:0; bottom:-6px; height:2px;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      transform: scaleX(0); transform-origin:left; transition: transform .25s ease;
+      border-radius:2px;
+    }
+    .nav a:hover::after{ transform: scaleX(1); }
     .brand{display:flex;gap:12px;align-items:center}
     .brand .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;font-weight:700}
     .brand .name{font-weight:700}
-    .nav a{opacity:.9}
-    .links{display:flex;gap:18px}
-    .btn{display:inline-flex;gap:10px;align-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#041316;padding:10px 16px;border-radius:999px;font-weight:600;box-shadow:var(--shadow)}
+    .btn{
+      position:relative; isolation:isolate;
+      display:inline-flex; gap:10px; align-items:center;
+      background: linear-gradient(135deg, color-mix(in oklab, var(--brand) 90%, transparent), color-mix(in oklab, var(--brand-2) 85%, transparent));
+      color:#041316; padding:10px 16px; border-radius:999px; font-weight:600; box-shadow: var(--shadow);
+      border:none;
+    }
+    .btn:hover{ transform: translateY(-1px) }
+    .btn:focus-visible{ box-shadow: var(--ring) }
+    .btn.btn-ghost{
+      background: transparent; color: var(--text); border:1px solid var(--border);
+    }
 
     /* Hero */
     .hero{padding:72px 0 32px}
     .hero-inner{display:grid;grid-template-columns:1.3fr .7fr;gap:28px}
     .badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--muted);font-size:12px}
-    h1{font-size:40px;line-height:1.15;margin:14px 0 16px}
+    .hero h1{
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text; background-clip:text; color: transparent;
+    }
     .lead{color:var(--muted);font-size:18px}
     .hero-cta{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card{
+      background: var(--surface); border:1px solid color-mix(in oklab, var(--border), transparent 20%);
+      border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(8px);
+    }
     .hero-card{padding:20px}
 
     /* Sections */
@@ -73,9 +142,9 @@
     /* Accessibility & polish */
     a:focus-visible { outline:2px solid var(--brand-2); outline-offset:3px; border-radius:6px }
     .card { box-shadow: 0 4px 18px rgba(0,0,0,.25) } /* softer classic shadow */
-    .btn:hover { transform: translateY(-1px) }
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{left:10px;top:10px;width:auto;height:auto;background:#0c1222;color:#e2e8f0;padding:8px 12px;border-radius:8px;z-index:9999}
+
     /* Chip accents */
     .chip:nth-child(1){ border-color:#155e75 }
     .chip:nth-child(2){ border-color:#1f2937 }
@@ -88,7 +157,18 @@
 
     /* Projects */
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .proj{display:flex;flex-direction:column;padding:18px}
+    .proj{position:relative; overflow:hidden; display:flex;flex-direction:column;padding:18px}
+    .proj::before{
+      content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+      border:1px solid transparent;
+      background: linear-gradient(120deg, color-mix(in oklab, var(--brand) 40%, transparent), color-mix(in oklab, var(--brand-2) 35%, transparent)) border-box;
+      -webkit-mask: 
+        linear-gradient(#000 0 0) padding-box, 
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      opacity:.0; transition: opacity .25s ease;
+    }
+    .proj:hover::before{ opacity:.7 }
     .proj h3{margin:6px 0 10px;font-size:18px}
     .proj p{margin:0 0 14px;color:#c7d2fe}
     .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
@@ -112,9 +192,20 @@
       h1{font-size:32px}
       .grid{grid-template-columns:1fr}
     }
+
+    @media (prefers-reduced-motion: reduce){
+      .btn:hover, .proj:hover::before{ transform:none; opacity:1 }
+      .nav a::after{ transition:none }
+    }
+    @media print {
+      header, footer, .hero-cta, .links a[href="/blog"] { display:none !important; }
+      body { color:#000 !important; background:#fff !important; }
+      .card { border:1px solid #ccc !important; box-shadow:none !important; backdrop-filter:none !important; }
+      .tag, .chip { border-color:#999 !important; color:#333 !important; background:#fff !important; }
+    }
   </style>
 </head>
-<body>
+<body data-theme="light">
   <a class="skip-link" href="#main">Skip to content</a>
   <header>
     <div class="container nav">
@@ -122,12 +213,13 @@
         <div class="logo">VG</div>
         <div class="name">Vinod Kumar Gorrepati</div>
       </div>
-      <nav class="links">
+      <nav class="links" role="navigation">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <a class="btn" href="#contact">Hire Me</a>
         <a href="/blog">Blog</a>
+        <a class="btn" href="#contact">Hire Me</a>
+        <button class="btn btn-ghost" id="themeToggle" aria-label="Toggle theme">🌙</button>
       </nav>
     </div>
   </header>
@@ -142,7 +234,8 @@
           <p class="lead">13+ years shipping MCU firmware (ESP32/nRF52/STM32), MQTT/NB‑IoT pipelines, and lab‑grade validation (Robot/PyTest, logic analyzers, power profiling).</p>
           <div class="hero-cta">
             <a class="btn" href="#projects">View Projects</a>
-            <a class="btn" href="mailto:vinodkumar1947@gmail.com?subject=Firmware/IoT%20consulting%20inquiry&amp;body=Hi%20Vinod%2C%20We%20have%20a%20project%20in%20..." style="background:transparent;border:1px solid var(--border);color:var(--text);box-shadow:none">Book a consultation</a>
+            <a class="btn btn-ghost" href="mailto:vinodkumar1947@gmail.com?subject=Firmware/IoT%20consulting%20inquiry&amp;body=Hi%20Vinod%2C%20We%20have%20a%20project%20in%20...">Book a consultation</a>
+            <a class="btn" href="mailto:vinodkumar1947@gmail.com?subject=IoT%20Project%20Inquiry&amp;body=Company%3A%0ATimeline%3A%0ABudget%3A%0AHardware%2FMCU%3A%0ANetwork%20%28BLE%2FZigBee%2FNB-IoT%29%3A%0ACloud%3A%0ASuccess%20criteria%3A%0A">Start a project</a>
           </div>
         </div>
         <div class="card hero-card">
@@ -201,6 +294,17 @@
         <span class="chip">Security: OTA • TLS • Key mgmt</span>
       </div>
     </section>
+    <section>
+      <h2>Toolchain Snapshot</h2>
+      <div class="chips">
+        <span class="chip">MCU SDKs: ESP‑IDF • nRF5 • STM32 HAL</span>
+        <span class="chip">Build: CMake • Ninja • GCC/Clang</span>
+        <span class="chip">Test: Robot • PyTest • HIL rigs</span>
+        <span class="chip">Security: OTA • TLS • key rotation</span>
+        <span class="chip">Cloud: Pub/Sub • Functions • Firestore</span>
+        <span class="chip">Observability: UART traces • power profiling</span>
+      </div>
+    </section>
 
     <!-- Projects -->
     <section id="projects">
@@ -247,24 +351,6 @@
       </div>
     </section>
 
-    <section>
-      <h2>Credentials &amp; Signals</h2>
-      <div class="chips">
-        <span class="chip"><a href="https://www.linkedin.com/in/vinod-kumar-gorrepati" target="_blank" rel="noreferrer">LinkedIn — 13+ yrs</a></span>
-        <span class="chip"><a href="https://github.com/vinodkumar1947" target="_blank" rel="noreferrer">GitHub — active projects</a></span>
-        <span class="chip"><a href="#" target="_blank" rel="noreferrer">Conference/Publication</a></span>
-        <span class="chip"><a href="#" target="_blank" rel="noreferrer">Certification</a></span>
-      </div>
-    </section>
-
-    <!-- Testimonials (placeholder) -->
-    <section>
-      <h2>Testimonials</h2>
-      <div class="card" style="padding:18px">
-        <p class="muted">“Vinod quickly understood our constraints and delivered a robust IoT prototype that moved us to pilot in weeks.” — <em>Client, 2025</em></p>
-      </div>
-    </section>
-
     <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
@@ -289,6 +375,34 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    // Theme toggle with localStorage
+    (function(){
+      const key = 'vg-theme';
+      const body = document.body;
+      const btn = document.getElementById('themeToggle');
+      const saved = localStorage.getItem(key);
+      // Default to LIGHT if nothing saved
+      if(!saved || saved === 'light'){
+        body.setAttribute('data-theme','light');
+        if(btn) btn.textContent = '🌞';
+        if(!saved) localStorage.setItem(key,'light');
+      } else {
+        body.removeAttribute('data-theme'); // dark
+        if(btn) btn.textContent = '🌙';
+      }
+      btn?.addEventListener('click', ()=>{
+        const isLight = body.getAttribute('data-theme') === 'light';
+        if(isLight){
+          body.removeAttribute('data-theme'); // dark
+          localStorage.setItem(key,'dark');
+          btn.textContent='🌙';
+        } else {
+          body.setAttribute('data-theme','light');
+          localStorage.setItem(key,'light');
+          btn.textContent='🌞';
+        }
+      });
+    })();
   </script>
 </body>
 </html>
