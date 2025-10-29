@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vinod Kumar Gorrepati — Portfolio</title>
   <meta name="description" content="Technology professional with 13+ years in embedded systems, IoT, and software engineering. Freelance consultant and mentor." />
+  <link rel="icon" href="/favicon.ico">
+  <meta property="og:title" content="Vinod Kumar Gorrepati — Embedded &amp; IoT Engineer">
+  <meta property="og:description" content="Production firmware, MQTT/NB‑IoT pipelines, and HIL test automation.">
+  <meta property="og:image" content="/og.png">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Vinod Kumar Gorrepati",
+    "jobTitle":"Embedded & IoT Engineer",
+    "url":"https://vinodkumar1947.github.io",
+    "sameAs":[
+      "https://github.com/vinodkumar1947",
+      "https://www.linkedin.com/in/vinod-kumar-gorrepati"
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -52,6 +70,18 @@
     h2{font-size:26px;margin:0 0 18px}
     .muted{color:var(--muted)}
 
+    /* Accessibility & polish */
+    a:focus-visible { outline:2px solid var(--brand-2); outline-offset:3px; border-radius:6px }
+    .card { box-shadow: 0 4px 18px rgba(0,0,0,.25) } /* softer classic shadow */
+    .btn:hover { transform: translateY(-1px) }
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:10px;top:10px;width:auto;height:auto;background:#0c1222;color:#e2e8f0;padding:8px 12px;border-radius:8px;z-index:9999}
+    /* Chip accents */
+    .chip:nth-child(1){ border-color:#155e75 }
+    .chip:nth-child(2){ border-color:#1f2937 }
+    .chip:nth-child(3){ border-color:#374151 }
+    .chip a{ color:#93c5fd }
+
     /* Skills */
     .chips{display:flex;flex-wrap:wrap;gap:10px}
     .chip{border:1px solid var(--border);background:#0c1222;padding:8px 12px;border-radius:999px;font-size:13px;color:#cbd5e1}
@@ -85,6 +115,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header>
     <div class="container nav">
       <div class="brand">
@@ -101,17 +132,17 @@
     </div>
   </header>
 
-  <main class="container">
+  <main id="main" class="container">
     <!-- Hero -->
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-card card">
           <span class="badge">13+ years • Embedded • IoT • Software</span>
-          <h1>Building reliable IoT & software solutions, freelancing for clients, and mentoring tech careers.</h1>
-          <p class="lead">I’m a technology professional specializing in embedded systems, IoT, and software engineering. I design and deliver production‑ready systems and guide teams and individuals to level up their engineering craft.</p>
+          <h1>Embedded &amp; IoT Engineer — production firmware, cloud pipelines, and HIL test automation</h1>
+          <p class="lead">13+ years shipping MCU firmware (ESP32/nRF52/STM32), MQTT/NB‑IoT pipelines, and lab‑grade validation (Robot/PyTest, logic analyzers, power profiling).</p>
           <div class="hero-cta">
             <a class="btn" href="#projects">View Projects</a>
-            <a class="btn" href="#contact" style="background:transparent;border:1px solid var(--border);color:var(--text);box-shadow:none">Get in Touch</a>
+            <a class="btn" href="mailto:vinodkumar1947@gmail.com?subject=Firmware/IoT%20consulting%20inquiry&amp;body=Hi%20Vinod%2C%20We%20have%20a%20project%20in%20..." style="background:transparent;border:1px solid var(--border);color:var(--text);box-shadow:none">Book a consultation</a>
           </div>
         </div>
         <div class="card hero-card">
@@ -159,28 +190,70 @@
       </div>
     </section>
 
+    <section>
+      <h2>Hardware &amp; Protocols</h2>
+      <div class="chips">
+        <span class="chip">MCUs: ESP32 • nRF52 • STM32</span>
+        <span class="chip">Buses: I²C • SPI • UART • CAN</span>
+        <span class="chip">Wireless: BLE • ZigBee • Wi‑Fi • NB‑IoT</span>
+        <span class="chip">RTOS: FreeRTOS • Zephyr</span>
+        <span class="chip">Tooling: J‑Link • OpenOCD • Logic Analyzer</span>
+        <span class="chip">Security: OTA • TLS • Key mgmt</span>
+      </div>
+    </section>
+
     <!-- Projects -->
     <section id="projects">
-      <h2>Selected Projects</h2>
+      <h2>Case Studies</h2>
       <div class="grid">
         <article class="proj card">
-          <span class="tag">Firmware • Production</span>
-          <h3>Smart Lighting Firmware</h3>
-          <p>Low‑power BLE/ZigBee firmware with OTA bootloader, secure pairing, and energy profiling.</p>
-          <a class="link" href="#">Repo / Case Study →</a>
+          <span class="tag">Firmware • BLE • Production</span>
+          <h3>Smart Lighting — OTA‑ready BLE firmware</h3>
+          <p><strong>Problem:</strong> Low‑power control with secure updates at scale.<br>
+             <strong>Approach:</strong> nRF52 + FreeRTOS, power profiling, encrypted OTA, pairing (EDIV/LTK), CI on HIL rig.<br>
+             <strong>Outcome:</strong> <em>18‑month</em> battery life target met; <em>0</em> field rollbacks across 3 OTA waves.</p>
+          <a class="link" href="https://github.com/vinodkumar1947">Repo / Notes →</a>
         </article>
+
         <article class="proj card">
-          <span class="tag">IoT • NB‑IoT</span>
-          <h3>HVAC IoT Controller</h3>
-          <p>NB‑IoT controller with MQTT pipeline, board bring‑up, and automated HIL test suite (PyTest/Robot).</p>
-          <a class="link" href="#">Repo / Case Study →</a>
+          <span class="tag">NB‑IoT • MQTT • Cloud</span>
+          <h3>HVAC Telemetry — NB‑IoT → MQTT → Firestore</h3>
+          <p><strong>Problem:</strong> Rural installs with weak cellular, intermittent power.<br>
+             <strong>Approach:</strong> ESP32 + NB‑IoT modem, QoS 1 with back‑off, protobuf payloads, Firestore rules &amp; BigQuery export.<br>
+             <strong>Outcome:</strong> <em>99.4%</em> message delivery over 30‑day soak; <em>~45%</em> data egress reduction via binary payloads.</p>
+          <a class="link" href="https://github.com/vinodkumar1947">Repo / Diagram →</a>
         </article>
+
         <article class="proj card">
-          <span class="tag">Cloud • LLM</span>
-          <h3>HR RAG Assistant</h3>
-          <p>Enterprise RAG assistant using Vertex AI + FAISS for onboarding and policy Q&A.</p>
-          <a class="link" href="#">Repo / Case Study →</a>
+          <span class="tag">HIL • Robot • PyTest</span>
+          <h3>Hardware‑in‑the‑Loop Test Bench</h3>
+          <p><strong>Problem:</strong> Firmware regressions slipping to field pilots.<br>
+             <strong>Approach:</strong> Robot Framework + PyTest harness, power rail shaper, UART sniffing, golden‑trace diffs in CI.<br>
+             <strong>Outcome:</strong> Cut pre‑pilot defects by <em>60%</em>; median repro time down from hours to minutes.</p>
+          <a class="link" href="https://github.com/vinodkumar1947">Framework / Examples →</a>
         </article>
+      </div>
+    </section>
+    <section>
+      <h2>Typical Stack</h2>
+      <div class="card" style="padding:16px">
+        <ul class="muted" style="margin:0 0 0 18px;line-height:1.8">
+          <li><strong>Device</strong>: ESP32 / nRF52 • FreeRTOS • drivers (I²C/SPI/UART) • power mgmt • OTA</li>
+          <li><strong>Edge→Cloud</strong>: MQTT (QoS 1) • NB‑IoT • back‑pressure • binary payloads</li>
+          <li><strong>Cloud</strong>: Pub/Sub → Functions → Firestore/BigQuery • IAM rules</li>
+          <li><strong>Ops</strong>: HIL tests (Robot/PyTest) • logs &amp; metrics • staged OTA</li>
+          <li><strong>AI</strong>: RAG assistants for field docs • anomaly detection on telemetry</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Credentials &amp; Signals</h2>
+      <div class="chips">
+        <span class="chip"><a href="https://www.linkedin.com/in/vinod-kumar-gorrepati" target="_blank" rel="noreferrer">LinkedIn — 13+ yrs</a></span>
+        <span class="chip"><a href="https://github.com/vinodkumar1947" target="_blank" rel="noreferrer">GitHub — active projects</a></span>
+        <span class="chip"><a href="#" target="_blank" rel="noreferrer">Conference/Publication</a></span>
+        <span class="chip"><a href="#" target="_blank" rel="noreferrer">Certification</a></span>
       </div>
     </section>
 
