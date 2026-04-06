@@ -496,6 +496,34 @@
       line-height: 1.7;
     }
 
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .proof-item {
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .proof-item span {
+      display: block;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.92rem;
+    }
+
     .about-grid,
     .contact-grid {
       display: grid;
@@ -634,6 +662,22 @@
       color: var(--text);
     }
 
+    .result-badge {
+      width: fit-content;
+      min-height: 34px;
+      padding: 0 12px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid rgba(101, 227, 255, 0.2);
+      background: rgba(101, 227, 255, 0.08);
+      color: var(--cyan);
+      font-size: 0.72rem;
+      font-family: "IBM Plex Mono", monospace;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
     .project-card .link-button {
       width: fit-content;
       min-height: 42px;
@@ -747,6 +791,7 @@
       .about-grid,
       .contact-grid,
       .section-head,
+      .proof-strip,
       .skills-grid,
       .projects-grid {
         grid-template-columns: 1fr;
@@ -780,6 +825,10 @@
       .signal-kpis {
         grid-template-columns: 1fr 1fr;
       }
+
+      .proof-strip {
+        grid-template-columns: 1fr 1fr;
+      }
       .meta-row {
         flex-direction: column;
       }
@@ -799,6 +848,7 @@
       .container { width: min(var(--max), calc(100% - 22px)); }
       h1 { max-width: none; }
       .signal-kpis { grid-template-columns: 1fr; }
+      .proof-strip { grid-template-columns: 1fr; }
       .hero-actions,
       .hero-foot,
       .social-row {
@@ -940,6 +990,27 @@
             <a href="https://www.linkedin.com/in/vinod-kumar-gorrepati" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <section class="container fade-up" aria-label="Proof points">
+      <div class="proof-strip">
+        <article class="proof-item">
+          <strong>Production firmware</strong>
+          <span>Device-side engineering across embedded systems, connectivity, and validation.</span>
+        </article>
+        <article class="proof-item">
+          <strong>Device to cloud</strong>
+          <span>Telemetry paths, backend tooling, and operational support for connected products.</span>
+        </article>
+        <article class="proof-item">
+          <strong>High-constraint systems</strong>
+          <span>Useful where power, signal quality, observability, and field reliability all matter.</span>
+        </article>
+        <article class="proof-item">
+          <strong>Consulting + mentoring</strong>
+          <span>Hands-on execution, architecture support, and targeted engineering guidance.</span>
+        </article>
       </div>
     </section>
 
@@ -1093,6 +1164,7 @@
             <span class="tag">OTA</span>
           </div>
           <h3>Connected Device Firmware Platform</h3>
+          <div class="result-badge">Result: higher release confidence</div>
           <p><strong>Problem:</strong> Device software needed stable field behavior, secure updates, and low-power operation under production constraints.</p>
           <p><strong>Approach:</strong> Built embedded firmware around reliable peripheral control, communication handling, OTA strategy, and device-side debugging workflows.</p>
           <p><strong>Outcome:</strong> Improved release confidence and reduced field uncertainty with a clearer path from development to deployment.</p>
@@ -1107,6 +1179,7 @@
             <span class="tag">Cloud</span>
           </div>
           <h3>Telemetry Pipeline for Connected Systems</h3>
+          <div class="result-badge">Result: better delivery reliability</div>
           <p><strong>Problem:</strong> Field devices had to move data reliably despite weak network conditions, intermittent connectivity, and downstream operational complexity.</p>
           <p><strong>Approach:</strong> Designed telemetry paths around MQTT and constrained communications, with backend handling for ingestion, persistence, and monitoring support.</p>
           <p><strong>Outcome:</strong> Better delivery reliability and a stronger foundation for analytics, operational visibility, and automation.</p>
@@ -1121,6 +1194,7 @@
             <span class="tag">PyTest</span>
           </div>
           <h3>Hardware-in-the-Loop Validation Workflow</h3>
+          <div class="result-badge">Result: faster debugging cycles</div>
           <p><strong>Problem:</strong> Firmware regressions were too expensive to discover late, and reproducing failures manually was slow and inconsistent.</p>
           <p><strong>Approach:</strong> Built automated validation flows using HIL-style setups, test harnesses, and repeatable checks to expose regressions earlier in the cycle.</p>
           <p><strong>Outcome:</strong> Faster debugging, better release discipline, and reduced risk before deployment or pilot stages.</p>
