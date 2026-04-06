@@ -210,6 +210,27 @@
       font-weight: 600;
     }
 
+    .contact-lead {
+      margin-bottom: 18px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-lead strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .contact-lead span {
+      display: block;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
     .hero {
       padding: 72px 0 38px;
     }
@@ -726,6 +747,10 @@
       align-content: start;
     }
 
+    .contact-list .button {
+      width: 100%;
+    }
+
     .contact-item {
       padding: 18px;
       border-radius: 18px;
@@ -818,8 +843,13 @@
       }
 
       .nav-links {
+        width: 100%;
         justify-content: flex-start;
         gap: 8px;
+      }
+
+      .nav-links a {
+        flex: 0 0 auto;
       }
 
       .signal-kpis {
@@ -854,10 +884,19 @@
       .social-row {
         flex-direction: column;
       }
+      .nav-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+      }
       .button,
       .link-button,
-      .social-row a {
+      .social-row a,
+      .nav-links a {
         width: 100%;
+      }
+      .nav-links .cta-link {
+        grid-column: 1 / -1;
       }
     }
 
@@ -1269,6 +1308,10 @@
         <article class="contact-panel">
           <h3>Send a message</h3>
           <p>This form opens your mail client with the details prefilled so the site stays static and GitHub Pages friendly.</p>
+          <div class="contact-lead">
+            <strong>Best first message</strong>
+            <span>Include the device type, deployment environment, connectivity constraints, timeline, and the current blocker. That is usually enough to make the first discussion useful.</span>
+          </div>
           <form id="contactForm">
             <label>
               Name
@@ -1292,6 +1335,7 @@
 
         <aside class="contact-list">
           <h3>Direct channels</h3>
+          <a class="button primary" href="mailto:vinodkumar1947@gmail.com?subject=Project%20Inquiry%20for%20Vinod%20Kumar%20Gorrepati">Email Vinod</a>
           <div class="contact-item">
             <strong>Email</strong>
             <a href="mailto:vinodkumar1947@gmail.com">vinodkumar1947@gmail.com</a>
