@@ -116,8 +116,7 @@
     .tag,
     .nav-links a,
     .link-button,
-    .footer-line,
-    .timeline-year {
+    .footer-line {
       font-family: "IBM Plex Mono", monospace;
       letter-spacing: 0.08em;
     }
@@ -495,8 +494,7 @@
     .about-copy,
     .about-panel,
     .contact-panel,
-    .contact-list,
-    .writing-card {
+    .contact-list {
       padding: 28px;
       border-radius: var(--radius-lg);
       background: var(--bg-soft);
@@ -506,8 +504,7 @@
 
     .about-copy p,
     .contact-panel p,
-    .contact-list p,
-    .writing-card p {
+    .contact-list p {
       margin: 0;
       color: var(--muted);
       line-height: 1.8;
@@ -570,7 +567,6 @@
 
     .skill-card h3,
     .project-card h3,
-    .writing-card h3,
     .contact-panel h3,
     .contact-list h3 {
       margin: 0 0 12px;
@@ -624,51 +620,6 @@
       border-color: rgba(101, 227, 255, 0.26);
       background: rgba(101, 227, 255, 0.08);
       font-size: 0.78rem;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 16px;
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 110px minmax(0, 1fr);
-      gap: 18px;
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .timeline-item:last-child { border-bottom: 0; }
-
-    .timeline-year {
-      color: var(--cyan);
-      font-size: 0.78rem;
-      padding-top: 4px;
-    }
-
-    .timeline-copy strong {
-      display: block;
-      font-size: 1.06rem;
-      margin-bottom: 6px;
-    }
-
-    .timeline-copy p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .writing-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .writing-card .button {
-      flex-shrink: 0;
     }
 
     .contact-panel form {
@@ -788,8 +739,7 @@
       .skill-card,
       .project-card,
       .contact-panel,
-      .contact-list,
-      .writing-card {
+      .contact-list {
         padding: 22px;
       }
 
@@ -807,12 +757,6 @@
       .signal-kpis {
         grid-template-columns: 1fr 1fr;
       }
-
-      .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
       .meta-row {
         flex-direction: column;
       }
@@ -877,9 +821,7 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#writing">Writing</a>
         <a href="#contact">Contact</a>
-        <a href="/blog/">Blog</a>
         <a class="cta-link" href="#contact">Start a Project</a>
       </nav>
     </div>
@@ -973,7 +915,6 @@
           <div class="social-row">
             <a href="https://github.com/vinodkumar1947" target="_blank" rel="noreferrer">GitHub</a>
             <a href="https://www.linkedin.com/in/vinod-kumar-gorrepati" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="/blog/">Blog</a>
           </div>
         </aside>
       </div>
@@ -1166,55 +1107,6 @@
           <p><strong>Approach:</strong> Created automated HIL-style checks, test harnesses, and repeatable validation flows to make regressions visible earlier in development.</p>
           <p><strong>Impact:</strong> Shortened reproduction time, improved release discipline, and gave teams better signal before deployment.</p>
           <a class="link-button" href="mailto:vinodkumar1947@gmail.com?subject=Discuss%20Validation%20Automation">Discuss Similar Work</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="container fade-up" id="writing">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Writing</div>
-          <h2>Notes, blog posts, and technical direction</h2>
-        </div>
-        <p>
-          Your current site already has a blog structure. I kept it and linked it directly so the homepage
-          can act as a portfolio front door while long-form writing stays separate.
-        </p>
-      </div>
-
-      <div class="about-grid">
-        <article class="about-panel">
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-year">Embedded</div>
-              <div class="timeline-copy">
-                <strong>Device architecture and debugging</strong>
-                <p>Practical notes on firmware design, low-power systems, radio protocols, and what fails first when embedded products leave the bench.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">IoT</div>
-              <div class="timeline-copy">
-                <strong>Telemetry and connected operations</strong>
-                <p>Patterns for moving data from field devices into backend systems without making monitoring and diagnosis harder than the original problem.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">AI</div>
-              <div class="timeline-copy">
-                <strong>Useful AI inside engineering workflows</strong>
-                <p>Where AI supports ops, documentation, triage, and internal tooling without becoming a distraction layer over core product engineering.</p>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="writing-card">
-          <div>
-            <h3>Blog and technical writing</h3>
-            <p>The blog remains available for longer posts. You can use it for embedded notes, IoT lessons learned, AI workflow experiments, and consulting case studies.</p>
-          </div>
-          <a class="button primary" href="/blog/">Open Blog</a>
         </article>
       </div>
     </section>
