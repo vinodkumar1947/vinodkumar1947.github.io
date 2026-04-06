@@ -1,413 +1,1346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vinod Kumar Gorrepati — Portfolio</title>
-  <meta name="description" content="Technology professional with 13+ years in embedded systems, IoT, and software engineering. Freelance consultant and mentor." />
-  <link rel="icon" href="/favicon.ico">
-  <meta property="og:title" content="Vinod Kumar Gorrepati — Embedded &amp; IoT Engineer">
-  <meta property="og:description" content="Production firmware, MQTT/NB‑IoT pipelines, and HIL test automation.">
-  <meta property="og:image" content="/og.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vinod Kumar Gorrepati | Embedded Systems & IoT Engineer</title>
+  <meta name="description" content="Embedded systems and IoT engineer building production firmware, telemetry platforms, validation pipelines, and AI-assisted operational tooling.">
+  <meta property="og:title" content="Vinod Kumar Gorrepati | Embedded Systems & IoT Engineer">
+  <meta property="og:description" content="Production firmware, telemetry platforms, HIL validation, and AI-assisted tooling.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vinodkumar1947.github.io/">
+  <meta name="theme-color" content="#06131d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add("js");</script>
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Vinod Kumar Gorrepati",
-    "jobTitle":"Embedded & IoT Engineer",
-    "url":"https://vinodkumar1947.github.io",
-    "sameAs":[
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vinod Kumar Gorrepati",
+    "jobTitle": "Embedded Systems & IoT Engineer",
+    "url": "https://vinodkumar1947.github.io",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Northbrook",
+      "addressRegion": "Illinois",
+      "addressCountry": "US"
+    },
+    "sameAs": [
       "https://github.com/vinodkumar1947",
       "https://www.linkedin.com/in/vinod-kumar-gorrepati"
+    ],
+    "knowsAbout": [
+      "Embedded C",
+      "C++",
+      "ESP32",
+      "STM32",
+      "nRF52",
+      "MQTT",
+      "NB-IoT",
+      "Python",
+      "FastAPI",
+      "Hardware-in-the-loop testing",
+      "IoT systems"
     ]
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Dark theme (default) */
-      --bg: #0b1120;
-      --bg-accent: #0b1120;
-      --panel: #0f172a;
-      --surface: rgba(17, 24, 39, 0.6);
-      --muted: #94a3b8;
-      --text: #e2e8f0;
-      --brand: #10b981; /* teal/green */
-      --brand-2: #38bdf8; /* blue */
-      --card: #0b1220;
-      --border: #1f2937;
-      --radius: 20px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --ring: 0 0 0 2px rgba(56,189,248,.35);
+      --bg: #06131d;
+      --bg-soft: rgba(12, 28, 40, 0.72);
+      --panel: rgba(10, 23, 34, 0.84);
+      --panel-strong: #0d2231;
+      --text: #e8f3f8;
+      --muted: #95aebe;
+      --line: rgba(136, 183, 207, 0.18);
+      --cyan: #65e3ff;
+      --mint: #9ff5c5;
+      --amber: #ffc979;
+      --shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
     }
-    body[data-theme="light"] {
-      --bg: #f7fafc;
-      --bg-accent: #f1f5f9;
-      --panel: #ffffffcc;
-      --surface: rgba(255,255,255,0.7);
-      --muted: #475569;
-      --text: #0f172a;
-      --brand: #0ea5e9;
-      --brand-2: #10b981;
-      --card: #ffffff;
-      --border: #e2e8f0;
-      --shadow: 0 10px 30px rgba(2,6,23,.08);
-      --ring: 0 0 0 2px rgba(14,165,233,.25);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Poppins",sans-serif}
 
-    /* Decorative background layers */
-    body::before{
-      content:"";
-      position:fixed; inset:0; z-index:-2;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--text);
       background:
-        radial-gradient(60rem 60rem at 80% -10%, color-mix(in oklab, var(--brand) 30%, transparent), transparent 50%),
-        radial-gradient(50rem 50rem at -10% 20%, color-mix(in oklab, var(--brand-2) 30%, transparent), transparent 55%),
-        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+        radial-gradient(circle at 15% 20%, rgba(101, 227, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(159, 245, 197, 0.18), transparent 24%),
+        linear-gradient(180deg, #06131d 0%, #081a27 38%, #07121b 100%);
+      overflow-x: hidden;
     }
-    body::after{
-      content:"";
-      position:fixed; inset:0; z-index:-1; pointer-events:none;
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    body::before {
       background-image:
-        linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px);
-      background-size: 48px 48px, 48px 48px;
-      mask-image: radial-gradient(80rem 80rem at 50% 10%, black, transparent 70%);
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+      background-size: 84px 84px;
+      mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.92) 40%, transparent 86%);
     }
 
-    /* Type scale */
-    h1{font-size: clamp(36px, 5vw, 48px); line-height:1.12; margin:14px 0 16px}
-    h2{font-size: clamp(22px, 2.5vw, 28px); letter-spacing:.3px}
-    .lead{font-size: clamp(16px, 1.4vw, 19px)}
-
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-
-    /* Layout */
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(11,18,32,.9), rgba(11,18,32,.6) 70%, rgba(11,18,32,0));backdrop-filter:blur(10px);}
-    header{ border-bottom:1px solid color-mix(in oklab, var(--border), transparent 30%);}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-    .nav a{opacity:.95; position:relative; transition:opacity .2s ease}
-    /* Increase spacing between header links and buttons */
-    .links{ display:flex; align-items:center; gap:28px }
-    @media (min-width: 900px){
-      .links{ gap:36px }
-    }
-    .nav a::after{
-      content:"";
-      position:absolute; left:0; right:0; bottom:-6px; height:2px;
-      background: linear-gradient(90deg, var(--brand), var(--brand-2));
-      transform: scaleX(0); transform-origin:left; transition: transform .25s ease;
-      border-radius:2px;
-    }
-    .nav a:hover::after{ transform: scaleX(1); }
-    .brand{display:flex;gap:12px;align-items:center}
-    .brand .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;font-weight:700}
-    .brand .name{font-weight:700}
-    .btn{
-      position:relative; isolation:isolate;
-      display:inline-flex; gap:10px; align-items:center;
-      background: linear-gradient(135deg, color-mix(in oklab, var(--brand) 90%, transparent), color-mix(in oklab, var(--brand-2) 85%, transparent));
-      color:#041316; padding:10px 16px; border-radius:999px; font-weight:600; box-shadow: var(--shadow);
-      border:none;
-    }
-    .btn:hover{ transform: translateY(-1px) }
-    .btn:focus-visible{ box-shadow: var(--ring) }
-    .btn.btn-ghost{
-      background: transparent; color: var(--text); border:1px solid var(--border);
+    body::after {
+      background:
+        linear-gradient(120deg, rgba(101, 227, 255, 0.07), transparent 44%),
+        linear-gradient(300deg, rgba(255, 201, 121, 0.06), transparent 42%);
     }
 
-    /* Hero */
-    .hero{padding:72px 0 32px}
-    .hero-inner{display:grid;grid-template-columns:1.3fr .7fr;gap:36px}
-    .badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--muted);font-size:12px}
-    .hero h1{
-      background: linear-gradient(90deg, var(--brand), var(--brand-2));
-      -webkit-background-clip: text; background-clip:text; color: transparent;
-    }
-    .lead{color:var(--muted);font-size:18px}
-    .hero-cta{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
-    .card{
-      background: var(--surface); border:1px solid color-mix(in oklab, var(--border), transparent 20%);
-      border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(8px);
-    }
-    .hero-card{padding:20px}
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
-    /* Sections */
-    section{padding:56px 0}
-    h2{font-size:26px;margin:0 0 18px}
-    .muted{color:var(--muted)}
-
-    /* Accessibility & polish */
-    a:focus-visible { outline:2px solid var(--brand-2); outline-offset:3px; border-radius:6px }
-    .card { box-shadow: 0 4px 18px rgba(0,0,0,.25) } /* softer classic shadow */
-    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{left:10px;top:10px;width:auto;height:auto;background:#0c1222;color:#e2e8f0;padding:8px 12px;border-radius:8px;z-index:9999}
-
-    /* Chip accents */
-    .chip:nth-child(1){ border-color:#155e75 }
-    .chip:nth-child(2){ border-color:#1f2937 }
-    .chip:nth-child(3){ border-color:#374151 }
-    .chip a{ color:#93c5fd }
-
-    /* Skills */
-    .chips{display:flex;flex-wrap:wrap;gap:10px}
-    .chip{border:1px solid var(--border);background:#0c1222;padding:8px 12px;border-radius:999px;font-size:13px;color:#cbd5e1}
-
-    /* Projects */
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .proj{position:relative; overflow:hidden; display:flex;flex-direction:column;padding:18px}
-    .proj::before{
-      content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
-      border:1px solid transparent;
-      background: linear-gradient(120deg, color-mix(in oklab, var(--brand) 40%, transparent), color-mix(in oklab, var(--brand-2) 35%, transparent)) border-box;
-      -webkit-mask: 
-        linear-gradient(#000 0 0) padding-box, 
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude;
-      opacity:.0; transition: opacity .25s ease;
-    }
-    .proj:hover::before{ opacity:.7 }
-    .proj h3{margin:6px 0 10px;font-size:18px}
-    .proj p{margin:0 0 14px;color:#c7d2fe}
-    .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
-    .tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);color:#93c5fd}
-    .proj a.link{margin-top:14px;font-size:14px;color:#7dd3fc}
-
-    /* Contact */
-    .contact-card{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .contact-card a{word-break:break-word}
-
-    /* Footer */
-    footer{padding:26px 0;border-top:1px solid var(--border);color:var(--muted)}
-
-    /* Responsive */
-    @media (max-width: 900px){
-      .hero-inner{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr 1fr}
-      .contact-card{grid-template-columns:1fr}
-    }
-    @media (max-width: 600px){
-      h1{font-size:32px}
-      .grid{grid-template-columns:1fr}
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
     }
 
-    @media (prefers-reduced-motion: reduce){
-      .btn:hover, .proj:hover::before{ transform:none; opacity:1 }
-      .nav a::after{ transition:none }
+    .eyebrow,
+    .meta,
+    .chip,
+    .tag,
+    .nav-links a,
+    .link-button,
+    .footer-line,
+    .timeline-year {
+      font-family: "IBM Plex Mono", monospace;
+      letter-spacing: 0.08em;
     }
-    @media print {
-      header, footer, .hero-cta, .links a[href="/blog"] { display:none !important; }
-      body { color:#000 !important; background:#fff !important; }
-      .card { border:1px solid #ccc !important; box-shadow:none !important; backdrop-filter:none !important; }
-      .tag, .chip { border-color:#999 !important; color:#333 !important; background:#fff !important; }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      background: var(--text);
+      color: #09121a;
+      padding: 10px 14px;
+      border-radius: 999px;
+      z-index: 100;
+    }
+
+    .skip-link:focus { left: 12px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(6, 19, 29, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 74px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #07121b;
+      background: linear-gradient(135deg, var(--cyan), var(--mint));
+      box-shadow: 0 10px 30px rgba(101, 227, 255, 0.24);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 0.98rem;
+    }
+
+    .brand-copy span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.76rem;
+      padding: 10px 12px;
+      border-radius: 999px;
+      transition: 180ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-links .cta-link {
+      color: #09121a;
+      background: linear-gradient(135deg, var(--cyan), var(--mint));
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 72px 0 38px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .panel {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(18, 37, 52, 0.82), rgba(8, 20, 30, 0.94));
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(101, 227, 255, 0.14), transparent 38%, transparent 64%, rgba(255, 201, 121, 0.11));
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero-main {
+      padding: 34px;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.72rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1 {
+      margin: 18px 0 18px;
+      font-size: clamp(2.75rem, 8vw, 6.1rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      max-width: 12ch;
+    }
+
+    .hero-main p {
+      margin: 0;
+      max-width: 60ch;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button,
+    .link-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .button:hover,
+    .link-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      color: #08121a;
+      background: linear-gradient(135deg, var(--cyan), var(--mint));
+      font-weight: 700;
+    }
+
+    .button.ghost {
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .hero-foot {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding-top: 8px;
+    }
+
+    .micro-card {
+      min-width: 160px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .micro-card strong {
+      display: block;
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+
+    .micro-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .hero-side {
+      padding: 28px;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .signal-board {
+      display: grid;
+      gap: 14px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+    }
+
+    .signal-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .pulse {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 0 0 rgba(159, 245, 197, 0.6);
+      animation: pulse 2.4s infinite;
+    }
+
+    .signal-location {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .signal-kpis {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .signal-kpis div {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(4, 11, 16, 0.34);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .signal-kpis strong {
+      display: block;
+      font-size: 1.5rem;
+    }
+
+    .signal-kpis span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .stack-lines {
+      display: grid;
+      gap: 10px;
+    }
+
+    .stack-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stack-line:last-child { border-bottom: 0; }
+
+    .stack-line strong {
+      font-size: 0.96rem;
+      max-width: 14ch;
+    }
+
+    .stack-line span {
+      text-align: right;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .social-row a,
+    .ghost-chip {
+      padding: 11px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.03);
+      transition: 180ms ease;
+    }
+
+    .social-row a:hover,
+    .ghost-chip:hover {
+      color: var(--text);
+      border-color: rgba(101, 227, 255, 0.36);
+    }
+
+    section {
+      padding: 44px 0;
+      scroll-margin-top: 92px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.5fr);
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      margin: 10px 0 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.82fr);
+      gap: 22px;
+    }
+
+    .about-copy,
+    .about-panel,
+    .contact-panel,
+    .contact-list,
+    .writing-card {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .about-copy p,
+    .contact-panel p,
+    .contact-list p,
+    .writing-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .about-copy p + p,
+    .contact-panel p + p { margin-top: 14px; }
+
+    .about-panel {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .meta-row:last-child { border-bottom: 0; }
+
+    .meta {
+      color: var(--cyan);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+    }
+
+    .meta-row strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 1.08rem;
+    }
+
+    .meta-row span:last-child {
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 28ch;
+      text-align: right;
+    }
+
+    .skills-grid,
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .skill-card,
+    .project-card {
+      min-height: 100%;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(15, 33, 46, 0.9), rgba(8, 19, 28, 0.96));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .skill-card h3,
+    .project-card h3,
+    .writing-card h3,
+    .contact-panel h3,
+    .contact-list h3 {
+      margin: 0 0 12px;
+      font-size: 1.2rem;
+    }
+
+    .skill-card p,
+    .project-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .chip-row,
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .chip,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .tag { color: var(--cyan); }
+
+    .projects-grid .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .project-card p strong { color: var(--text); }
+
+    .project-card .link-button {
+      width: fit-content;
+      min-height: 42px;
+      padding: 0 16px;
+      margin-top: auto;
+      color: var(--text);
+      border-color: rgba(101, 227, 255, 0.26);
+      background: rgba(101, 227, 255, 0.08);
+      font-size: 0.78rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 18px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .timeline-item:last-child { border-bottom: 0; }
+
+    .timeline-year {
+      color: var(--cyan);
+      font-size: 0.78rem;
+      padding-top: 4px;
+    }
+
+    .timeline-copy strong {
+      display: block;
+      font-size: 1.06rem;
+      margin-bottom: 6px;
+    }
+
+    .timeline-copy p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .writing-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .writing-card .button {
+      flex-shrink: 0;
+    }
+
+    .contact-panel form {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .contact-panel label {
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-panel input,
+    .contact-panel textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      font: inherit;
+      padding: 14px 16px;
+      resize: vertical;
+    }
+
+    .contact-panel input:focus,
+    .contact-panel textarea:focus {
+      outline: 2px solid rgba(101, 227, 255, 0.28);
+      outline-offset: 2px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .contact-item {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      color: var(--muted);
+      line-height: 1.7;
+      word-break: break-word;
+    }
+
+    .site-footer {
+      padding: 22px 0 30px;
+    }
+
+    .footer-shell {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+    }
+
+    .footer-line {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+    }
+
+    .fade-up {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    html.js .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 500ms ease, transform 500ms ease;
+    }
+
+    html.js .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(159, 245, 197, 0.5); }
+      70% { box-shadow: 0 0 0 12px rgba(159, 245, 197, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(159, 245, 197, 0); }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .section-head,
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero { padding-top: 44px; }
+      .hero-main,
+      .hero-side,
+      .about-copy,
+      .about-panel,
+      .skill-card,
+      .project-card,
+      .contact-panel,
+      .contact-list,
+      .writing-card {
+        padding: 22px;
+      }
+
+      .nav-shell {
+        padding: 10px 0 14px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        gap: 8px;
+      }
+
+      .signal-kpis {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .meta-row {
+        flex-direction: column;
+      }
+
+      .meta-row span:last-child {
+        max-width: none;
+        text-align: left;
+      }
+
+      .footer-shell {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: min(var(--max), calc(100% - 22px)); }
+      h1 { max-width: none; }
+      .signal-kpis { grid-template-columns: 1fr; }
+      .hero-actions,
+      .hero-foot,
+      .social-row {
+        flex-direction: column;
+      }
+      .button,
+      .link-button,
+      .social-row a {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fade-up,
+      .fade-up.visible,
+      .button,
+      .link-button,
+      .nav-links a {
+        transition: none;
+        transform: none;
+        opacity: 1;
+      }
+      .pulse { animation: none; }
     }
   </style>
 </head>
-<body data-theme="light">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">VG</div>
-        <div class="name">Vinod Kumar Gorrepati</div>
-      </div>
-      <nav class="links" role="navigation">
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="#home" aria-label="Vinod Kumar Gorrepati home">
+        <span class="brand-mark">VG</span>
+        <span class="brand-copy">
+          <strong>Vinod Kumar Gorrepati</strong>
+          <span>Embedded systems, IoT, validation</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#writing">Writing</a>
         <a href="#contact">Contact</a>
-        <a href="/blog">Blog</a>
-        <a class="btn" href="#contact">Hire Me</a>
-        <button class="btn btn-ghost" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <a href="/blog/">Blog</a>
+        <a class="cta-link" href="#contact">Start a Project</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="container">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-card card">
-          <span class="badge">13+ years • Embedded • IoT • Software</span>
-          <h1>Embedded &amp; IoT Engineer — production firmware, cloud pipelines, and HIL test automation</h1>
-          <p class="lead">13+ years shipping MCU firmware (ESP32/nRF52/STM32), MQTT/NB‑IoT pipelines, and lab‑grade validation (Robot/PyTest, logic analyzers, power profiling).</p>
-          <div class="hero-cta">
-            <a class="btn" href="#projects">View Projects</a>
-            <a class="btn btn-ghost" href="mailto:vinodkumar1947@gmail.com?subject=Firmware/IoT%20consulting%20inquiry&amp;body=Hi%20Vinod%2C%20We%20have%20a%20project%20in%20...">Book a consultation</a>
-            <a class="btn" href="mailto:vinodkumar1947@gmail.com?subject=IoT%20Project%20Inquiry&amp;body=Company%3A%0ATimeline%3A%0ABudget%3A%0AHardware%2FMCU%3A%0ANetwork%20%28BLE%2FZigBee%2FNB-IoT%29%3A%0ACloud%3A%0ASuccess%20criteria%3A%0A">Start a project</a>
+  <main id="main">
+    <section class="hero container fade-up" id="home">
+      <div class="hero-grid">
+        <article class="panel hero-main">
+          <div>
+            <span class="eyebrow">Embedded systems + connected products</span>
+            <h1>Vinod Kumar Gorrepati</h1>
+            <p>
+              I design firmware, telemetry pipelines, and validation systems for connected hardware.
+              My work spans low-power device software, MQTT and NB-IoT data paths, hardware-in-the-loop testing,
+              and pragmatic AI tooling that helps product teams operate faster.
+            </p>
           </div>
+
+          <div>
+            <div class="hero-actions">
+              <a class="button primary" href="#projects">View Projects</a>
+              <a class="button ghost" href="mailto:vinodkumar1947@gmail.com?subject=Project%20Inquiry%20for%20Vinod%20Kumar%20Gorrepati">Contact Me</a>
+              <a class="button ghost" href="https://www.linkedin.com/in/vinod-kumar-gorrepati" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+            <div class="hero-foot">
+              <div class="micro-card">
+                <strong>13+</strong>
+                <span>Years across embedded systems, IoT integration, and software delivery.</span>
+              </div>
+              <div class="micro-card">
+                <strong>Field to Cloud</strong>
+                <span>Firmware, radio protocols, device telemetry, backend services, and QA automation.</span>
+              </div>
+              <div class="micro-card">
+                <strong>Consulting + Mentoring</strong>
+                <span>Open to freelance execution, architecture guidance, and engineering coaching.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="panel hero-side" aria-label="Summary panel">
+          <div class="signal-board">
+            <div class="signal-top">
+              <div>
+                <div class="meta">Current signal</div>
+                <strong>Available for select consulting work</strong>
+              </div>
+              <span class="pulse" aria-hidden="true"></span>
+            </div>
+            <div class="signal-location">Based in Northbrook, Illinois, working across embedded, IoT, and AI-enabled systems.</div>
+            <div class="signal-kpis">
+              <div>
+                <strong>ESP32 / STM32 / nRF52</strong>
+                <span>Production firmware and device-side debugging.</span>
+              </div>
+              <div>
+                <strong>MQTT / NB-IoT / BLE</strong>
+                <span>Reliable transport across constrained field conditions.</span>
+              </div>
+              <div>
+                <strong>Python / FastAPI</strong>
+                <span>Data services, tooling, and automation around hardware systems.</span>
+              </div>
+              <div>
+                <strong>Robot / PyTest HIL</strong>
+                <span>Validation workflows that catch regressions before pilot rollout.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="signal-board">
+            <div class="meta">Engineering focus</div>
+            <div class="stack-lines">
+              <div class="stack-line">
+                <strong>Device software</strong>
+                <span>Embedded C/C++, RTOS, drivers, OTA, power optimization</span>
+              </div>
+              <div class="stack-line">
+                <strong>Connectivity</strong>
+                <span>BLE, ZigBee, Wi-Fi, GSM, GPS, MQTT, cellular telemetry</span>
+              </div>
+              <div class="stack-line">
+                <strong>Systems tooling</strong>
+                <span>Python, test harnesses, observability, deployment automation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-row">
+            <a href="https://github.com/vinodkumar1947" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/vinod-kumar-gorrepati" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="/blog/">Blog</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container fade-up" id="about">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">About</div>
+          <h2>Built around real systems, not demos</h2>
         </div>
-        <div class="card hero-card">
-          <h3 style="margin:6px 0 10px">Quick Facts</h3>
-          <ul class="muted" style="margin:0 0 10px 18px;line-height:1.8">
-            <li>Expertise: Embedded C/C++, RTOS, BLE/ZigBee, MQTT, NB‑IoT</li>
-            <li>Cloud/AI: GCP/AWS, Python, ML pipelines, RAG/LLM integrations</li>
-            <li>Freelance: Delivered client projects across IoT & web</li>
-            <li>Mentor: Career guidance & interview prep</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">ESP8266/ESP32</span>
-            <span class="chip">RC4 (enhanced)</span>
+        <p>
+          I work best where hardware, software, and operational constraints intersect:
+          production firmware, data movement from device to cloud, lab validation, and
+          the practical details that make connected products stable in the field.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-copy">
+          <p>
+            My background covers embedded systems, IoT platforms, backend services, and
+            software engineering across product and consulting environments. I have spent
+            more than a decade solving for reliability under real constraints: battery life,
+            weak connectivity, intermittent power, testability, and the cost of bad field behavior.
+          </p>
+          <p>
+            The work is rarely just firmware or just cloud. It is usually the whole path:
+            sensor input, edge behavior, transport, payload design, persistence, monitoring,
+            and the test infrastructure that proves the system before it ships.
+          </p>
+          <p>
+            I also mentor engineers and support teams that need sharper development workflows,
+            better debugging discipline, and a cleaner path from prototype to production.
+          </p>
+        </article>
+
+        <aside class="about-panel">
+          <div class="meta-row">
+            <span>
+              <span class="meta">Base</span>
+              <strong>Northbrook, Illinois</strong>
+            </span>
+            <span>Available for remote collaboration and targeted onsite work when needed.</span>
+          </div>
+          <div class="meta-row">
+            <span>
+              <span class="meta">Operating range</span>
+              <strong>Firmware to backend</strong>
+            </span>
+            <span>Device code, telemetry ingestion, automation, and cloud-adjacent tooling.</span>
+          </div>
+          <div class="meta-row">
+            <span>
+              <span class="meta">Engagement types</span>
+              <strong>Execution, advisory, mentoring</strong>
+            </span>
+            <span>Useful when a team needs hands-on delivery or sharper engineering structure.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container fade-up" id="skills">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Skills</div>
+          <h2>Core capabilities</h2>
+        </div>
+        <p>
+          The strongest fit is work that combines device behavior, connectivity, cloud data flow,
+          and test rigor instead of treating them as separate tracks.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card">
+          <h3>Embedded Firmware</h3>
+          <p>Embedded C/C++, RTOS and bare-metal systems, peripheral bring-up, power management, OTA updates, and field debugging for ESP32, STM32, nRF52, and adjacent MCU platforms.</p>
+          <div class="chip-row">
+            <span class="chip">ESP32</span>
+            <span class="chip">STM32</span>
+            <span class="chip">nRF52</span>
+            <span class="chip">FreeRTOS</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <h3>Connectivity & Telemetry</h3>
+          <p>BLE, ZigBee, Wi-Fi, GSM, GPS, MQTT, and NB-IoT flows designed for resilience under weak signal conditions, constrained bandwidth, and intermittent power environments.</p>
+          <div class="chip-row">
             <span class="chip">MQTT</span>
-            <span class="chip">Firestore</span>
-            <span class="chip">React</span>
-            <span class="chip">FastAPI</span>
-            <span class="chip">Docker/K8s</span>
+            <span class="chip">NB-IoT</span>
+            <span class="chip">BLE</span>
+            <span class="chip">ZigBee</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p class="muted">I’m <strong>Vinod Kumar Gorrepati</strong>, a technology professional with <strong>13+ years</strong> in <strong>embedded systems</strong>, <strong>IoT</strong>, and <strong>software engineering</strong>. I build resilient products, help clients through <strong>freelancing projects</strong>, and mentor engineers to accelerate their careers.</p>
-    </section>
-
-    <!-- Skills -->
-    <section>
-      <h2>Core Skills</h2>
-      <div class="chips">
-        <span class="chip">Embedded C/C++</span>
-        <span class="chip">RTOS & Bare‑Metal</span>
-        <span class="chip">BLE / ZigBee</span>
-        <span class="chip">NB‑IoT / GSM / GPS</span>
-        <span class="chip">Python</span>
-        <span class="chip">FastAPI</span>
-        <span class="chip">React</span>
-        <span class="chip">MQTT</span>
-        <span class="chip">Firestore / BigQuery</span>
-        <span class="chip">ML/LLM Integrations</span>
-        <span class="chip">Docker / Kubernetes</span>
-      </div>
-    </section>
-
-    <section>
-      <h2>Hardware &amp; Protocols</h2>
-      <div class="chips">
-        <span class="chip">MCUs: ESP32 • nRF52 • STM32</span>
-        <span class="chip">Buses: I²C • SPI • UART • CAN</span>
-        <span class="chip">Wireless: BLE • ZigBee • Wi‑Fi • NB‑IoT</span>
-        <span class="chip">RTOS: FreeRTOS • Zephyr</span>
-        <span class="chip">Tooling: J‑Link • OpenOCD • Logic Analyzer</span>
-        <span class="chip">Security: OTA • TLS • Key mgmt</span>
-      </div>
-    </section>
-    <section>
-      <h2>Toolchain Snapshot</h2>
-      <div class="chips">
-        <span class="chip">MCU SDKs: ESP‑IDF • nRF5 • STM32 HAL</span>
-        <span class="chip">Build: CMake • Ninja • GCC/Clang</span>
-        <span class="chip">Test: Robot • PyTest • HIL rigs</span>
-        <span class="chip">Security: OTA • TLS • key rotation</span>
-        <span class="chip">Cloud: Pub/Sub • Functions • Firestore</span>
-        <span class="chip">Observability: UART traces • power profiling</span>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Case Studies</h2>
-      <div class="grid">
-        <article class="proj card">
-          <span class="tag">Firmware • BLE • Production</span>
-          <h3>Smart Lighting — OTA‑ready BLE firmware</h3>
-          <p><strong>Problem:</strong> Low‑power control with secure updates at scale.<br>
-             <strong>Approach:</strong> nRF52 + FreeRTOS, power profiling, encrypted OTA, pairing (EDIV/LTK), CI on HIL rig.<br>
-             <strong>Outcome:</strong> <em>18‑month</em> battery life target met; <em>0</em> field rollbacks across 3 OTA waves.</p>
-          <a class="link" href="https://github.com/vinodkumar1947">Repo / Notes →</a>
         </article>
 
-        <article class="proj card">
-          <span class="tag">NB‑IoT • MQTT • Cloud</span>
-          <h3>HVAC Telemetry — NB‑IoT → MQTT → Firestore</h3>
-          <p><strong>Problem:</strong> Rural installs with weak cellular, intermittent power.<br>
-             <strong>Approach:</strong> ESP32 + NB‑IoT modem, QoS 1 with back‑off, protobuf payloads, Firestore rules &amp; BigQuery export.<br>
-             <strong>Outcome:</strong> <em>99.4%</em> message delivery over 30‑day soak; <em>~45%</em> data egress reduction via binary payloads.</p>
-          <a class="link" href="https://github.com/vinodkumar1947">Repo / Diagram →</a>
+        <article class="skill-card">
+          <h3>Validation & Tooling</h3>
+          <p>Hardware-in-the-loop test benches, Robot Framework and PyTest automation, telemetry inspection, and developer tooling that reduces regression escape and accelerates reproductions.</p>
+          <div class="chip-row">
+            <span class="chip">Robot</span>
+            <span class="chip">PyTest</span>
+            <span class="chip">HIL</span>
+            <span class="chip">CI</span>
+          </div>
         </article>
 
-        <article class="proj card">
-          <span class="tag">HIL • Robot • PyTest</span>
-          <h3>Hardware‑in‑the‑Loop Test Bench</h3>
-          <p><strong>Problem:</strong> Firmware regressions slipping to field pilots.<br>
-             <strong>Approach:</strong> Robot Framework + PyTest harness, power rail shaper, UART sniffing, golden‑trace diffs in CI.<br>
-             <strong>Outcome:</strong> Cut pre‑pilot defects by <em>60%</em>; median repro time down from hours to minutes.</p>
-          <a class="link" href="https://github.com/vinodkumar1947">Framework / Examples →</a>
+        <article class="skill-card">
+          <h3>Backend Systems</h3>
+          <p>Python services, FastAPI APIs, ingestion pipelines, payload transformation, operational dashboards, and cloud integration points that support connected products end to end.</p>
+          <div class="chip-row">
+            <span class="chip">Python</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">Firestore</span>
+            <span class="chip">BigQuery</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <h3>AI-Enabled Tooling</h3>
+          <p>Practical AI usage around engineering operations: document retrieval, assistant workflows, anomaly support, and process acceleration where it actually reduces team friction.</p>
+          <div class="chip-row">
+            <span class="chip">LLM workflows</span>
+            <span class="chip">RAG</span>
+            <span class="chip">Automation</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <h3>Mentoring & Consulting</h3>
+          <p>Architecture reviews, troubleshooting support, career mentoring, and direct project execution when teams need experienced hands rather than generic implementation bandwidth.</p>
+          <div class="chip-row">
+            <span class="chip">Advisory</span>
+            <span class="chip">Mentoring</span>
+            <span class="chip">Delivery</span>
+          </div>
         </article>
       </div>
     </section>
-    <section>
-      <h2>Typical Stack</h2>
-      <div class="card" style="padding:16px">
-        <ul class="muted" style="margin:0 0 0 18px;line-height:1.8">
-          <li><strong>Device</strong>: ESP32 / nRF52 • FreeRTOS • drivers (I²C/SPI/UART) • power mgmt • OTA</li>
-          <li><strong>Edge→Cloud</strong>: MQTT (QoS 1) • NB‑IoT • back‑pressure • binary payloads</li>
-          <li><strong>Cloud</strong>: Pub/Sub → Functions → Firestore/BigQuery • IAM rules</li>
-          <li><strong>Ops</strong>: HIL tests (Robot/PyTest) • logs &amp; metrics • staged OTA</li>
-          <li><strong>AI</strong>: RAG assistants for field docs • anomaly detection on telemetry</li>
-        </ul>
-      </div>
-    </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card contact-card">
+    <section class="container fade-up" id="projects">
+      <div class="section-head">
         <div>
-          <p>Email<br><a href="mailto:vinodkumar1947@gmail.com">vinodkumar1947@gmail.com</a></p>
-          <p>LinkedIn<br><a href="https://www.linkedin.com/in/vinod-kumar-gorrepati" target="_blank" rel="noreferrer">linkedin.com/in/vinod-kumar-gorrepati</a></p>
+          <div class="eyebrow">Projects</div>
+          <h2>Representative work</h2>
         </div>
+        <p>
+          These are framed as engineering outcomes rather than portfolio filler. The emphasis is on
+          system behavior, delivery decisions, and what changed because of the work.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="tag-row">
+            <span class="tag">Firmware</span>
+            <span class="tag">BLE</span>
+            <span class="tag">OTA</span>
+          </div>
+          <h3>Low-power connected device firmware</h3>
+          <p><strong>Problem:</strong> Deliver stable device behavior, secure update paths, and battery-aware operation for embedded products expected to survive real field usage.</p>
+          <p><strong>Approach:</strong> Implemented MCU-side logic, protocol handling, OTA strategy, and debugging workflows with attention to power profiles and reproducibility.</p>
+          <p><strong>Impact:</strong> Reduced field uncertainty and made release readiness measurable instead of anecdotal.</p>
+          <a class="link-button" href="https://github.com/vinodkumar1947" target="_blank" rel="noreferrer">View GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <div class="tag-row">
+            <span class="tag">Telemetry</span>
+            <span class="tag">MQTT</span>
+            <span class="tag">Cloud</span>
+          </div>
+          <h3>Device telemetry flow from edge to storage</h3>
+          <p><strong>Problem:</strong> Field devices need reliable data transfer even with weak cellular conditions and uneven power availability.</p>
+          <p><strong>Approach:</strong> Built resilient data paths around MQTT and constrained networking, with payload handling and backend persistence tailored to operational realities.</p>
+          <p><strong>Impact:</strong> Improved delivery confidence and created a cleaner foundation for monitoring, analytics, and downstream automation.</p>
+          <a class="link-button" href="https://github.com/vinodkumar1947" target="_blank" rel="noreferrer">Repo Notes</a>
+        </article>
+
+        <article class="project-card">
+          <div class="tag-row">
+            <span class="tag">Validation</span>
+            <span class="tag">Robot</span>
+            <span class="tag">PyTest</span>
+          </div>
+          <h3>Hardware-in-the-loop validation workflow</h3>
+          <p><strong>Problem:</strong> Firmware regressions are expensive when discovered only after pilot or field rollout.</p>
+          <p><strong>Approach:</strong> Created automated HIL-style checks, test harnesses, and repeatable validation flows to make regressions visible earlier in development.</p>
+          <p><strong>Impact:</strong> Shortened reproduction time, improved release discipline, and gave teams better signal before deployment.</p>
+          <a class="link-button" href="mailto:vinodkumar1947@gmail.com?subject=Discuss%20Validation%20Automation">Discuss Similar Work</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="container fade-up" id="writing">
+      <div class="section-head">
         <div>
-          <p>Location<br>Northbrook, Illinois, USA</p>
-          <p>Open to<br>Freelance consulting, advisory, and mentoring</p>
+          <div class="eyebrow">Writing</div>
+          <h2>Notes, blog posts, and technical direction</h2>
         </div>
+        <p>
+          Your current site already has a blog structure. I kept it and linked it directly so the homepage
+          can act as a portfolio front door while long-form writing stays separate.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-panel">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">Embedded</div>
+              <div class="timeline-copy">
+                <strong>Device architecture and debugging</strong>
+                <p>Practical notes on firmware design, low-power systems, radio protocols, and what fails first when embedded products leave the bench.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">IoT</div>
+              <div class="timeline-copy">
+                <strong>Telemetry and connected operations</strong>
+                <p>Patterns for moving data from field devices into backend systems without making monitoring and diagnosis harder than the original problem.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">AI</div>
+              <div class="timeline-copy">
+                <strong>Useful AI inside engineering workflows</strong>
+                <p>Where AI supports ops, documentation, triage, and internal tooling without becoming a distraction layer over core product engineering.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="writing-card">
+          <div>
+            <h3>Blog and technical writing</h3>
+            <p>The blog remains available for longer posts. You can use it for embedded notes, IoT lessons learned, AI workflow experiments, and consulting case studies.</p>
+          </div>
+          <a class="button primary" href="/blog/">Open Blog</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="container fade-up" id="contact">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Contact</div>
+          <h2>Start with a concrete problem</h2>
+        </div>
+        <p>
+          The best outreach includes the device class, deployment environment, connectivity constraints,
+          and what is currently breaking. That is enough to make the first conversation useful.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <article class="contact-panel">
+          <h3>Send a message</h3>
+          <p>This form opens your mail client with the details prefilled so the site stays static and GitHub Pages friendly.</p>
+          <form id="contactForm">
+            <label>
+              Name
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </label>
+            <label>
+              Email
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label>
+              Subject
+              <input type="text" id="subject" name="subject" placeholder="What do you need help with?" required>
+            </label>
+            <label>
+              Message
+              <textarea id="message" name="message" rows="6" placeholder="Project context, timeline, environment, current blockers..." required></textarea>
+            </label>
+            <button class="button primary" type="submit">Open Email Draft</button>
+          </form>
+        </article>
+
+        <aside class="contact-list">
+          <h3>Direct channels</h3>
+          <div class="contact-item">
+            <strong>Email</strong>
+            <a href="mailto:vinodkumar1947@gmail.com">vinodkumar1947@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <strong>LinkedIn</strong>
+            <a href="https://www.linkedin.com/in/vinod-kumar-gorrepati" target="_blank" rel="noreferrer">linkedin.com/in/vinod-kumar-gorrepati</a>
+          </div>
+          <div class="contact-item">
+            <strong>GitHub</strong>
+            <a href="https://github.com/vinodkumar1947" target="_blank" rel="noreferrer">github.com/vinodkumar1947</a>
+          </div>
+          <div class="contact-item">
+            <strong>Typical fit</strong>
+            <span>Embedded product engineering, telemetry systems, validation automation, AI-supported internal tooling, and technical mentoring.</span>
+          </div>
+        </aside>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Vinod Kumar Gorrepati · Built with care</p>
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <div>© <span id="year"></span> Vinod Kumar Gorrepati</div>
+      <div class="footer-line">Embedded systems • IoT • validation • applied AI</div>
     </div>
   </footer>
 
   <script>
+    const sections = Array.from(document.querySelectorAll("main section[id]"));
+    const navLinks = Array.from(document.querySelectorAll(".nav-links a[href^='#']"));
+    const animatedBlocks = document.querySelectorAll(".fade-up");
+
     document.getElementById("year").textContent = new Date().getFullYear();
-    // Theme toggle with localStorage
-    (function(){
-      const key = 'vg-theme';
-      const body = document.body;
-      const btn = document.getElementById('themeToggle');
-      const saved = localStorage.getItem(key);
-      // Default to LIGHT if nothing saved
-      if(!saved || saved === 'light'){
-        body.setAttribute('data-theme','light');
-        if(btn) btn.textContent = '🌞';
-        if(!saved) localStorage.setItem(key,'light');
-      } else {
-        body.removeAttribute('data-theme'); // dark
-        if(btn) btn.textContent = '🌙';
-      }
-      btn?.addEventListener('click', ()=>{
-        const isLight = body.getAttribute('data-theme') === 'light';
-        if(isLight){
-          body.removeAttribute('data-theme'); // dark
-          localStorage.setItem(key,'dark');
-          btn.textContent='🌙';
-        } else {
-          body.setAttribute('data-theme','light');
-          localStorage.setItem(key,'light');
-          btn.textContent='🌞';
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
         }
       });
-    })();
+    }, { threshold: 0.14 });
+
+    animatedBlocks.forEach((block) => observer.observe(block));
+
+    const linkMap = new Map(navLinks.map((link) => [link.getAttribute("href").slice(1), link]));
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.id;
+        const link = linkMap.get(id);
+        if (!link) return;
+
+        if (entry.isIntersecting) {
+          navLinks.forEach((item) => item.classList.remove("active"));
+          link.classList.add("active");
+        }
+      });
+    }, {
+      rootMargin: "-35% 0px -50% 0px",
+      threshold: 0.01
+    });
+
+    sections.forEach((section) => navObserver.observe(section));
+
+    document.getElementById("contactForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const body = [
+        "Name: " + name,
+        "Email: " + email,
+        "",
+        message
+      ].join("\n");
+
+      window.location.href = "mailto:vinodkumar1947@gmail.com?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+    });
   </script>
 </body>
 </html>
