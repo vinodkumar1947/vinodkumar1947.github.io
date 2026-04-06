@@ -273,12 +273,24 @@
       max-width: 12ch;
     }
 
+    .hero-role {
+      margin: -4px 0 16px;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      color: var(--text);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
     .hero-main p {
       margin: 0;
       max-width: 60ch;
       color: var(--muted);
       font-size: clamp(1rem, 2vw, 1.18rem);
       line-height: 1.7;
+    }
+
+    .hero-summary {
+      max-width: 56ch;
     }
 
     .hero-actions {
@@ -611,6 +623,17 @@
 
     .project-card p strong { color: var(--text); }
 
+    .project-stack {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .project-stack strong {
+      color: var(--text);
+    }
+
     .project-card .link-button {
       width: fit-content;
       min-height: 42px;
@@ -821,6 +844,7 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#proof">Trust</a>
         <a href="#contact">Contact</a>
         <a class="cta-link" href="#contact">Start a Project</a>
       </nav>
@@ -834,7 +858,8 @@
           <div>
             <span class="eyebrow">Embedded systems + connected products</span>
             <h1>Vinod Kumar Gorrepati</h1>
-            <p>
+            <div class="hero-role">Embedded Systems &amp; IoT Engineer</div>
+            <p class="hero-summary">
               Embedded Systems &amp; IoT Engineer building production firmware, telemetry pipelines,
               validation systems, and AI-assisted engineering tools for connected products.
             </p>
@@ -1071,6 +1096,7 @@
           <p><strong>Problem:</strong> Device software needed stable field behavior, secure updates, and low-power operation under production constraints.</p>
           <p><strong>Approach:</strong> Built embedded firmware around reliable peripheral control, communication handling, OTA strategy, and device-side debugging workflows.</p>
           <p><strong>Outcome:</strong> Improved release confidence and reduced field uncertainty with a clearer path from development to deployment.</p>
+          <div class="project-stack"><strong>Stack:</strong> Embedded C/C++, RTOS, ESP32, STM32, BLE, OTA</div>
           <a class="link-button" href="https://github.com/vinodkumar1947" target="_blank" rel="noreferrer">View GitHub</a>
         </article>
 
@@ -1084,6 +1110,7 @@
           <p><strong>Problem:</strong> Field devices had to move data reliably despite weak network conditions, intermittent connectivity, and downstream operational complexity.</p>
           <p><strong>Approach:</strong> Designed telemetry paths around MQTT and constrained communications, with backend handling for ingestion, persistence, and monitoring support.</p>
           <p><strong>Outcome:</strong> Better delivery reliability and a stronger foundation for analytics, operational visibility, and automation.</p>
+          <div class="project-stack"><strong>Stack:</strong> MQTT, NB-IoT, Python, FastAPI, Firestore, BigQuery</div>
           <a class="link-button" href="https://github.com/vinodkumar1947" target="_blank" rel="noreferrer">Repo Notes</a>
         </article>
 
@@ -1097,6 +1124,7 @@
           <p><strong>Problem:</strong> Firmware regressions were too expensive to discover late, and reproducing failures manually was slow and inconsistent.</p>
           <p><strong>Approach:</strong> Built automated validation flows using HIL-style setups, test harnesses, and repeatable checks to expose regressions earlier in the cycle.</p>
           <p><strong>Outcome:</strong> Faster debugging, better release discipline, and reduced risk before deployment or pilot stages.</p>
+          <div class="project-stack"><strong>Stack:</strong> PyTest, Robot Framework, Python, HIL, CI</div>
           <a class="link-button" href="mailto:vinodkumar1947@gmail.com?subject=Discuss%20Validation%20Automation">Discuss Similar Work</a>
         </article>
       </div>
